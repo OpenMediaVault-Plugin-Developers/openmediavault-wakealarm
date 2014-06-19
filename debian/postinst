@@ -16,7 +16,8 @@ case "$1" in
         fi
 
         # install python-croniter package
-        pip install croniter
+        echo "Installing croniter..."
+        pip install croniter > /dev/null 2>&1
         
         # Activate package triggers. These triggers are only set during the
         # package installation.
