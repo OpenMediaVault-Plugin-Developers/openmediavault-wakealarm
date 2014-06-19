@@ -1,0 +1,140 @@
+#!/usr/bin/env python
+"""
+
+
+
+"""
+from croniter import croniter
+from datetime import datetime
+from datetime import timedelta
+from sys import exit
+import time
+from time import mktime
+
+import logging
+
+WAKEUP_CONF = '/etc/wakealarm.conf'
+WAKEALARM = '/sys/class/rtc/rtc0/wakealarm'
+#BOOTCOMPENSATION = timedelta(minutes=2)
+
+try:
+    from logging import NullHandler # Python >= 2.7
+except ImportError:
+    from logging import Handler
+    
+    class NullHandler(Handler):
+        def emit(self, record):
+            pass
+
+log = logging.getLogger(__name__)
+log.addHandler(NullHandler())
+
+class WakeAlarm(object):
+    """
+
+    Attributes:
+        config (str): Full path and filename of schedule file.
+        offset (timedelta): Minimum offset from current time to schedule from.
+            This prevents missed schedules during a shutdown.
+        next_alarm (datetime): Time of upcoming wakealarm.
+        current_alarm: Time of current wakealarm.
+
+    """
+    def __init__(self, config=None, offset=timedelta(minutes=2)):
+        """
+
+        Args:
+            config (str): Full path and filename of schedule file.
+            offset (timedelta): Minimum offset from current time to schedule from.
+                This prevents missed schedules during a shutdown.
+
+        """
+        #Moeten custom variables hiet getest worden?
+        self.config = config
+        self.offset = offset
+
+        self._cronexp = []
+        self.next_alarm = None
+        self.current_alarm = None #Of juist misschien meteen het huidige alarm zetten.
+        self.load_config() #Misschien verplaatsen naar main()
+
+    def load_config(self):
+        """Load wakealarm schedule from file."""
+        self._cronexp[:] = []
+        if not self.config:
+            log.error('No configuration file set.')
+            return
+        try:
+            with open(self.config, 'r') as f:
+                for line in f:
+                    line = line.partition('#')[0].rstrip()
+                    if line:
+                        self._cronexp.append(line)
+        except IOError:
+            log.critical('Unable to load wakealarm table.')
+
+    def get_next_alarm(self):
+        """Determine datetime of upcoming wakealarm."""
+        times = []
+        current_time = datetime.now()
+        for line in self._cronexp[:]:
+            try:
+                time = croniter(line, current_time).get_next(datetime)
+                times.append(time)
+            except ValueError:
+                log.warning('Unrecognized cron expression: %s', line)
+                self._cronexp.remove(line)
+        next_alarm = min(times)
+        min_alarm = current_time + self.offset
+        if next_alarm < min_alarm:
+            next_alarm = min_alarm
+        self.next_alarm = next_alarm
+        log.info('Next alarm: %s', self.next_alarm)
+        return self.next_alarm  #Overbodig? 3x
+
+    def get_current_alarm(self):
+        """Get current wakealarm in datetime format."""
+        with open(WAKEALARM, 'r') as f:
+            line = f.readline().strip('\n')
+        if line:
+            self.current_alarm = datetime.fromtimestamp(float(line))
+            log.info('Current alarm: %s', self.current_alarm)
+        else:
+            self.current_alarm = None
+            log.info('No alarm set previously.')
+        return self.current_alarm
+
+    def set_alarm(self):
+        """Set upcoming wakealarm."""
+        if self.next_alarm and self.next_alarm != self.current_alarm:
+            timestamp = '{0:.0f}\n'.format(time.mktime(self.next_alarm.timetuple()))
+            with open(WAKEALARM, 'w') as f:
+                f.write('0\n')
+            with open(WAKEALARM, 'w') as f:
+                f.write(timestamp)
+            log.info('Wakealarm set to: %s', self.next_alarm)
+        else:
+            log.warning('No alarm to be set.')
+
+def config_logger():
+    """Initialize script logger. Will be ignored for module use."""
+    log.setLevel(logging.DEBUG)
+
+    handler = logging.StreamHandler()
+    handler.setLevel(logging.DEBUG)
+    formatter = logging.Formatter('%(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+
+    log.addHandler(handler)
+
+def main():
+    """Main script function. Will be ignored for module use."""
+    config_logger()
+
+    wakealarm = WakeAlarm(config=WAKEUP_CONF)
+    wakealarm.get_current_alarm()
+    wakealarm.get_next_alarm()
+    wakealarm.set_alarm()
+
+if  __name__ == '__main__':
+    main()

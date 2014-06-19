@@ -1,0 +1,46 @@
+# This file is part of OpenMediaVault.
+#
+# @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
+# @author    Volker Theile <volker.theile@openmediavault.org>
+# @copyright Copyright (c) 2009-2014 Volker Theile
+#
+# OpenMediaVault is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# OpenMediaVault is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with OpenMediaVault. If not, see <http://www.gnu.org/licenses/>.
+
+# Documentation/Howto:
+# http://www.cyberciti.biz/faq/disable-the-mail-alert-by-crontab-command
+# http://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses
+# http://wiki.dreamhost.com/index.php/Crontab
+
+set -e
+
+. /etc/default/openmediavault
+. /usr/share/openmediavault/scripts/helper-functions
+
+OMV_CRONTAB_USERDEFINED_CONFIG=${OMV_CRONTAB_USERDEFINED_CONFIG:-"/etc/wakealarm.conf"}
+
+# Create the cron script itself
+xmlstarlet sel -t \
+  -o "# m h dom mon dow" -n \
+  -m "//system/wakealarm/job[enable='1']" \
+          -i "everynminute[. = '1']" -v "concat('*/',minute,' ')" -b \
+          -i "everynminute[. = '0']" -v "concat(minute,' ')" -b \
+          -i "everynhour[. = '1']" -v "concat('*/',hour,' ')" -b \
+          -i "everynhour[. = '0']" -v "concat(hour,' ')" -b \
+          -i "everyndayofmonth[. = '1']" -v "concat('*/',dayofmonth,' ')" -b \
+          -i "everyndayofmonth[. = '0']" -v "concat(dayofmonth,' ')" -b \
+          -v "concat(month,' ',dayofweek)" \
+          -n \
+  -b \
+  ${OMV_CONFIG_FILE} | xmlstarlet unesc > ${OMV_CRONTAB_USERDEFINED_CONFIG}
+chmod 644 ${OMV_CRONTAB_USERDEFINED_CONFIG}

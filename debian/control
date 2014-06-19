@@ -1,0 +1,11 @@
+Source: openmediavault-wakealarm
+Section: net
+Priority: optional
+Maintainer: OpenMediaVault Plugin Developers <plugins@omv-extras.org>
+Build-Depends: debhelper (>= 9.0.0)
+Standards-Version: 3.9.3
+
+Package: openmediavault-wakealarm
+Architecture: all
+Depends: openmediavault (>= 0.6.11), ${misc:Depends}
+Description: wakealarm plugin for OpenMediaVault.
