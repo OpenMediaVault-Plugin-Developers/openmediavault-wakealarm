@@ -329,36 +329,6 @@ Ext.define("OMV.module.admin.system.wakealarm.Jobs", {
         me.callParent(arguments);
     },
 
-    getTopToolbarItems: function() {
-        var me = this;
-        var items = me.callParent(arguments);
-        /*// Add 'Run' button to top toolbar.
-        Ext.Array.insert(items, 2, [{
-            id: me.getId() + "-run",
-            xtype: "button",
-            text: _("Run"),
-            icon: "images/play.png",
-            iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
-            handler: Ext.Function.bind(me.onRunButton, me, [ me ]),
-            scope: me,
-            disabled: true
-        }]);*/
-        return items;
-    },
-
-    onSelectionChange: function(model, records) {
-        var me = this;
-        me.callParent(arguments);
-        // Process additional buttons.
-        var tbarRunCtrl = me.queryById(me.getId() + "-run");
-        if(records.length <= 0)
-            tbarRunCtrl.disable();
-        else if(records.length == 1)
-            tbarRunCtrl.enable();
-        else
-            tbarRunCtrl.disable();
-    },
-
     onAddButton : function() {
         var me = this;
         Ext.create("OMV.module.admin.system.wakealarm.Job", {
