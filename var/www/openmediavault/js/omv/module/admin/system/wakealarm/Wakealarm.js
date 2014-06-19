@@ -42,8 +42,8 @@ Ext.define("OMV.module.admin.system.wakealarm.Job", {
     ],
 
     rpcService   : "Wakealarm",
-    rpcGetMethod : "get",
-    rpcSetMethod : "set",
+    rpcGetMethod : "getJob",
+    rpcSetMethod : "setJob",
     plugins      : [{
         ptype : "configobject"
     }],
@@ -313,7 +313,7 @@ Ext.define("OMV.module.admin.system.wakealarm.Jobs", {
                     type    : "rpc",
                     rpcData : {
                         service : "Wakealarm",
-                        method  : "getList"
+                        method  : "getJobs"
                     }/*,
                     extraParams: {
                         type: [ "userdefined" ]
@@ -395,7 +395,7 @@ Ext.define("OMV.module.admin.system.wakealarm.Jobs", {
             callback : me.onDeletion,
             rpcData  : {
                 service : "Wakealarm",
-                method  : "delete",
+                method  : "deleteJob",
                 params  : {
                     uuid: record.get("uuid")
                 }
