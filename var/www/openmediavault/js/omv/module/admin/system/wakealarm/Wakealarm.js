@@ -235,7 +235,7 @@ Ext.define("OMV.module.admin.system.wakealarm.Jobs", {
         stateId   : "minute",
         renderer  : function(value, metaData, record) {
             var everynminute = record.get("everynminute");
-            if(everynminute == true) {
+            if(everynminute === true) {
                 value = "*/" + value;
             }
             return value;
@@ -249,7 +249,7 @@ Ext.define("OMV.module.admin.system.wakealarm.Jobs", {
             var everynhour = record.get("everynhour");
             var func = OMV.util.Format.arrayRenderer(Date.mapHour);
             value = func(value);
-            if(everynhour == true) {
+            if(everynhour === true) {
                 value = "*/" + value;
             }
             return value;
@@ -264,7 +264,7 @@ Ext.define("OMV.module.admin.system.wakealarm.Jobs", {
             var func = OMV.util.Format.arrayRenderer(
               Date.mapDayOfMonth);
             value = func(value);
-            if(everyndayofmonth == true) {
+            if(everyndayofmonth === true) {
                 value = "*/" + value;
             }
             return value;
