@@ -15,6 +15,9 @@ case "$1" in
             omv_config_add_element "${SERVICE_XPATH}" "enable" "0"
         fi
 
+        # install python-croniter package
+        pip install croniter
+        
         # Activate package triggers. These triggers are only set during the
         # package installation.
         dpkg-trigger update-fixperms
@@ -29,7 +32,5 @@ case "$1" in
         exit 1
     ;;
 esac
-
-#DEBHELPER#
 
 exit 0

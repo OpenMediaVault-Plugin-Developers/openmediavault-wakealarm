@@ -7,5 +7,5 @@ Standards-Version: 3.9.3
 
 Package: openmediavault-wakealarm
 Architecture: all
-Depends: openmediavault (>= 0.6.11), ${misc:Depends}
+Depends: openmediavault (>= 0.6.11), python-pip, ${misc:Depends}
 Description: wakealarm plugin for OpenMediaVault.
