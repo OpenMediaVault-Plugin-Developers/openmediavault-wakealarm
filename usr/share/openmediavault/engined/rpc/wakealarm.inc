@@ -62,7 +62,7 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
         $path = sprintf( "%s.jobs.job", $this->getEventMessagePath() );
         return $path;
     }
-    
+
     /**
      * Initialize the RPC service.
      */
@@ -136,10 +136,10 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
      */
     public function get($params, $context) {
         global $xmlConfig;
-        
+
         // Validate the RPC caller context.
         $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
-        
+
         // Validate the parameters of the RPC service method.
         $this->validateMethodParams($params, '{
             "type"       : "object",
@@ -147,7 +147,7 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
                 "uuid" : { '.$GLOBALS['OMV_JSONSCHEMA_UUID'].' }
             }
         }');
-        
+
         // Get the configuration object.
         $xpath = sprintf("%s[uuid='%s']", $this->getXPathJob(), $params['uuid']);
         $object = $xmlConfig->get($xpath);
@@ -159,7 +159,10 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
         $object['everynminute']     = boolval($object['everynminute']);
         $object['everynhour']       = boolval($object['everynhour']);
         $object['everyndayofmonth'] = boolval($object['everyndayofmonth']);
-        
+
+        // Remove useless fields from the result object.
+        unset($object['jobs']);
+
         return $object;
     }
 
@@ -172,10 +175,10 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
      */
     public function set($params, $context) {
         global $xmlConfig;
-        
+
         // Validate the RPC caller context.
         $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
-        
+
         // Validate the parameters of the RPC service method.
         $this->validateMethodParams($params, '{
             "type"       : "object",
@@ -198,7 +201,12 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
                 "comment"          : { "type" :"string"}
             }
         }');
-        
+
+        // Get the existing configuration object.
+        $oldObject = $xmlConfig->get( $this->getXPath() );
+        if(is_null($oldObject))
+            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
+
         // Prepare configuration data.
         $object = array(
             "uuid"             => ($params['uuid'] == $GLOBALS['OMV_UUID_UNDEFINED']) ? OMVUtil::uuid() : $params['uuid'],
@@ -211,9 +219,10 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
             "everyndayofmonth" => array_boolval($params, 'everyndayofmonth'),
             "month"            => $params['month'],
             "dayofweek"        => $params['dayofweek'],
-            "comment"          => $params['comment']
+            "comment"          => $params['comment'],
+            "jobs"             => isset($oldObject['jobs']) ? $oldObject['jobs'] : array()
         );
-        
+
         // Set the configuration data.
         $success = FALSE;
         if($params['uuid'] == $GLOBALS['OMV_UUID_UNDEFINED']) {
@@ -224,7 +233,7 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
             $xpath = sprintf("%s[uuid='%s']", $this->getXPathJob(), $params['uuid']);
             $success = $xmlConfig->replace($xpath, $object);
         }
-        
+
         if(FALSE === $success)
             throw new OMVException(OMVErrorMsg::E_CONFIG_SET_OBJECT_FAILED);
 
@@ -233,7 +242,7 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
         $dispatcher->notify(($params['uuid'] == $GLOBALS['OMV_UUID_UNDEFINED']) ?
             OMV_NOTIFY_CREATE : OMV_NOTIFY_MODIFY,
             $this->getEventMessagePathJob(), $object);
-            
+
         // Return the configuration object.
         return $object;
     }
@@ -247,10 +256,10 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
      */
     public function delete($params, $context) {
         global $xmlConfig;
-        
+
         // Validate the RPC caller context.
         $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
-        
+
         // Validate the parameters of the RPC service method.
         $this->validateMethodParams($params, '{
             "type"       : "object",
@@ -258,7 +267,7 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
                 "uuid" : { '.$GLOBALS['OMV_JSONSCHEMA_UUID'].' }
             }
         }');
-        
+
         // Delete the configuration object.
         $xpath = sprintf("%s[uuid='%s']", $this->getXPathJob(), $params['uuid']);
         return $this->deleteConfigObjectByPath($xpath, $this->getEventMessagePathJob());
