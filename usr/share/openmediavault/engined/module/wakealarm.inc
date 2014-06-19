@@ -41,7 +41,7 @@ class OMVModuleWakealarm extends OMVModuleServiceAbstract
         return $path;
     }
 
-    private function getEventMessagePathRepo() {
+    private function getEventMessagePathJob() {
         $path = sprintf( "%s.jobs.job", $this->getEventMessagePath() );
         return $path;
     }

@@ -67,10 +67,10 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
      * Initialize the RPC service.
      */
     public function initialize() {
-        $this->registerMethod("getList");
-        $this->registerMethod("get");
-        $this->registerMethod("set");
-        $this->registerMethod("delete");
+        $this->registerMethod("getJobs");
+        $this->registerMethod("getJob");
+        $this->registerMethod("setJob");
+        $this->registerMethod("deleteJob");
     }
 
     /**
@@ -88,7 +88,7 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
      *   array. An exception will be thrown in case of an error.
      * @throw E_CONFIG_GET_OBJECT_FAILED
      */
-    public function getList($params, $context) {
+    public function getJobs($params, $context) {
         global $xmlConfig;
 
         // Validate the RPC caller context.
@@ -134,7 +134,7 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
      * @return The requested configuration object.
      * @throw E_CONFIG_GET_OBJECT_FAILED
      */
-    public function get($params, $context) {
+    public function getJob($params, $context) {
         global $xmlConfig;
 
         // Validate the RPC caller context.
@@ -160,9 +160,6 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
         $object['everynhour']       = boolval($object['everynhour']);
         $object['everyndayofmonth'] = boolval($object['everyndayofmonth']);
 
-        // Remove useless fields from the result object.
-        unset($object['jobs']);
-
         return $object;
     }
 
@@ -173,7 +170,7 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
      * @return The stored configuration object.
      * @throw E_CONFIG_SET_OBJECT_FAILED
      */
-    public function set($params, $context) {
+    public function setJob($params, $context) {
         global $xmlConfig;
 
         // Validate the RPC caller context.
@@ -202,11 +199,6 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
             }
         }');
 
-        // Get the existing configuration object.
-        $oldObject = $xmlConfig->get( $this->getXPath() );
-        if(is_null($oldObject))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
-
         // Prepare configuration data.
         $object = array(
             "uuid"             => ($params['uuid'] == $GLOBALS['OMV_UUID_UNDEFINED']) ? OMVUtil::uuid() : $params['uuid'],
@@ -219,8 +211,7 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
             "everyndayofmonth" => array_boolval($params, 'everyndayofmonth'),
             "month"            => $params['month'],
             "dayofweek"        => $params['dayofweek'],
-            "comment"          => $params['comment'],
-            "jobs"             => isset($oldObject['jobs']) ? $oldObject['jobs'] : array()
+            "comment"          => $params['comment']
         );
 
         // Set the configuration data.
@@ -254,7 +245,7 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
      * @param context The context of the caller.
      * @return The deleted configuration object.
      */
-    public function delete($params, $context) {
+    public function deleteJob($params, $context) {
         global $xmlConfig;
 
         // Validate the RPC caller context.

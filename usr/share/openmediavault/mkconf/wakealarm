@@ -34,7 +34,7 @@ OMV_CRONTAB_USERDEFINED_CONFIG=${OMV_CRONTAB_USERDEFINED_CONFIG:-"/etc/wakealarm
 # Create the cron script itself
 xmlstarlet sel -t \
   -o "# m h dom mon dow" -n \
-  -m "//system/wakealarm/job[enable='1']" \
+  -m "//system/wakealarm/jobs/job[enable='1']" \
           -i "everynminute[. = '1']" -v "concat('*/',minute,' ')" -b \
           -i "everynminute[. = '0']" -v "concat(minute,' ')" -b \
           -i "everynhour[. = '1']" -v "concat('*/',hour,' ')" -b \
