@@ -15,10 +15,6 @@ case "$1" in
             omv_config_add_element "${SERVICE_XPATH}" "jobs" ""
         fi
 
-        # install python-croniter package
-        echo "Installing croniter..."
-        pip install croniter > /dev/null 2>&1
-        
         # Activate package triggers. These triggers are only set during the
         # package installation.
         dpkg-trigger update-fixperms
