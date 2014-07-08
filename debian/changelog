@@ -1,3 +1,9 @@
+openmediavault-wakealarm (1.0.0.3) stable; urgency=low
+
+  * Changed logging handler from StreamHandler to SyslogHandler
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Tue, 08 Jul 2014 16:43:10 +0200
+
 openmediavault-wakealarm (1.0.0.2) stable; urgency=low
 
   * Move croniter install to preinst
