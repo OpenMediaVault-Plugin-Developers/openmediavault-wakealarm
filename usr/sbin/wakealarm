@@ -12,6 +12,7 @@ import time
 from time import mktime
 
 import logging
+import logging.handlers
 
 WAKEUP_CONF = '/etc/wakealarm.conf'
 WAKEALARM = '/sys/class/rtc/rtc0/wakealarm'
@@ -120,9 +121,9 @@ def config_logger():
     """Initialize script logger. Will be ignored for module use."""
     log.setLevel(logging.DEBUG)
 
-    handler = logging.StreamHandler()
+    handler = logging.handlers.SysLogHandler(address='/dev/log', facility=logging.handlers.SysLogHandler.LOG_LOCAL6)
     handler.setLevel(logging.DEBUG)
-    formatter = logging.Formatter('%(levelname)s - %(message)s')
+    formatter = logging.Formatter('%(filename)s[%(process)s]: %(levelname)s - %(message)s')
     handler.setFormatter(formatter)
 
     log.addHandler(handler)
