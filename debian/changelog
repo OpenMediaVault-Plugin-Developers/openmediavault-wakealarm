@@ -1,3 +1,9 @@
+openmediavault-wakealarm (1.0.2) UNRELEASED; urgency=low
+
+  * Add translations
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Wed, 04 Mar 2015 06:16:11 -0600
+
 openmediavault-wakealarm (1.0.1) stable; urgency=low
 
   * Add custom debian/control field XB-Plugin-Section
