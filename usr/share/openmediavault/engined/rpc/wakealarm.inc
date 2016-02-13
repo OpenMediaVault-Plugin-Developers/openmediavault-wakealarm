@@ -4,7 +4,7 @@
  * @author    Volker Theile <volker.theile@openmediavault.org>
  * @author    OpenMediaVault Plugin Developers <plugins@omv-extras.org>
  * @copyright Copyright (c) 2009-2013 Volker Theile
- * @copyright Copyright (c) 2014-2015 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2014-2016 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,43 +30,46 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
     /**
      * Get the RPC service name.
      */
-    public function getName() {
+    public function getName()
+    {
         return "Wakealarm";
     }
 
-    private function getPluginName() {
+    private function getPluginName()
+    {
         return strtolower( $this->getName() );
     }
 
-    private function getXPath() {
-        $path = sprintf( "//system/%s", $this->getPluginName() );
-        return $path;
+    private function getXPath()
+    {
+        return sprintf( "/config/system/%s", $this->getPluginName() );
     }
 
-    private function getXPathJobs() {
-        $path = sprintf( "%s/jobs", $this->getXPath() );
-        return $path;
+    private function getXPathJobs()
+    {
+        return sprintf( "%s/jobs", $this->getXPath() );
     }
 
-    private function getXPathJob() {
-        $path = sprintf( "%s/job", $this->getXPathJobs() );
-        return $path;
+    private function getXPathJob()
+    {
+        return sprintf( "%s/job", $this->getXPathJobs() );
     }
 
-    private function getEventMessagePath() {
-        $path = sprintf( "org.openmediavault.system.%s", $this->getPluginName() );
-        return $path;
+    private function getEventMessagePath()
+    {
+        return sprintf( "org.openmediavault.system.%s", $this->getPluginName() );
     }
 
-    private function getEventMessagePathJob() {
-        $path = sprintf( "%s.jobs.job", $this->getEventMessagePath() );
-        return $path;
+    private function getEventMessagePathJob()
+    {
+        return sprintf( "%s.jobs.job", $this->getEventMessagePath() );
     }
 
     /**
      * Initialize the RPC service.
      */
-    public function initialize() {
+    public function initialize()
+    {
         $this->registerMethod("getJobs");
         $this->registerMethod("getJob");
         $this->registerMethod("setJob");
@@ -88,11 +91,15 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
      *   array. An exception will be thrown in case of an error.
      * @throw E_CONFIG_GET_OBJECT_FAILED
      */
-    public function getJobs($params, $context) {
+    public function getJobs($params, $context)
+    {
         global $xmlConfig;
 
         // Validate the RPC caller context.
-        $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
+        $this->validateMethodContext(
+            $context,
+            [ "role" => OMV_ROLE_ADMINISTRATOR ]
+        );
 
         // Validate the parameters of the RPC service method.
         $this->validateMethodParams($params, '{
@@ -111,7 +118,7 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
             throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $xpath);
 
         // Get cron jobs that match the given type.
-        $jobs = array();
+        $jobs = [];
         foreach($objects as $objectk => $objectv) {
             // Modify result data.
             $objectv['enable']           = boolval($objectv['enable']);
@@ -134,11 +141,15 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
      * @return The requested configuration object.
      * @throw E_CONFIG_GET_OBJECT_FAILED
      */
-    public function getJob($params, $context) {
+    public function getJob($params, $context)
+    {
         global $xmlConfig;
 
         // Validate the RPC caller context.
-        $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
+        $this->validateMethodContext(
+            $context,
+            [ "role" => OMV_ROLE_ADMINISTRATOR ]
+        );
 
         // Validate the parameters of the RPC service method.
         $this->validateMethodParams($params, '{
@@ -170,11 +181,15 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
      * @return The stored configuration object.
      * @throw E_CONFIG_SET_OBJECT_FAILED
      */
-    public function setJob($params, $context) {
+    public function setJob($params, $context)
+    {
         global $xmlConfig;
 
         // Validate the RPC caller context.
-        $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
+        $this->validateMethodContext(
+            $context,
+            [ "role" => OMV_ROLE_ADMINISTRATOR ]
+        );
 
         // Validate the parameters of the RPC service method.
         $this->validateMethodParams($params, '{
@@ -200,7 +215,7 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
         }');
 
         // Prepare configuration data.
-        $object = array(
+        $object = [
             "uuid"             => ($params['uuid'] == $GLOBALS['OMV_UUID_UNDEFINED']) ? OMVUtil::uuid() : $params['uuid'],
             "enable"           => array_boolval($params, 'enable'),
             "minute"           => $params['minute'],
@@ -212,13 +227,13 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
             "month"            => $params['month'],
             "dayofweek"        => $params['dayofweek'],
             "comment"          => $params['comment']
-        );
+        ];
 
         // Set the configuration data.
         $success = FALSE;
         if($params['uuid'] == $GLOBALS['OMV_UUID_UNDEFINED']) {
             // Append object to configuration.
-            $success = $xmlConfig->set($this->getXPathJobs(), array("job" => $object));
+            $success = $xmlConfig->set($this->getXPathJobs(), [ "job" => $object ]);
         } else {
             // Update existing configuration object.
             $xpath = sprintf("%s[uuid='%s']", $this->getXPathJob(), $params['uuid']);
@@ -245,11 +260,15 @@ class OMVRpcServiceWakealarm extends OMVRpcServiceAbstract {
      * @param context The context of the caller.
      * @return The deleted configuration object.
      */
-    public function deleteJob($params, $context) {
+    public function deleteJob($params, $context)
+    {
         global $xmlConfig;
 
         // Validate the RPC caller context.
-        $this->validateMethodContext($context, array( "role" => OMV_ROLE_ADMINISTRATOR ));
+        $this->validateMethodContext(
+            $context,
+            [ "role" => OMV_ROLE_ADMINISTRATOR ]
+        );
 
         // Validate the parameters of the RPC service method.
         $this->validateMethodParams($params, '{
