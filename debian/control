@@ -8,7 +8,7 @@ Standards-Version: 3.9.6
 
 Package: openmediavault-wakealarm
 Architecture: all
-Depends: openmediavault (>= 3.0.9),
+Depends: openmediavault (= 3.0.13),
          python-croniter,
          ${misc:Depends}
 Description: wakealarm plugin for OpenMediaVault.
