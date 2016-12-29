@@ -313,11 +313,8 @@ Ext.define("OMV.module.admin.system.wakealarm.Jobs", {
                     type    : "rpc",
                     rpcData : {
                         service : "Wakealarm",
-                        method  : "getJobs"
-                    }/*,
-                    extraParams: {
-                        type: [ "userdefined" ]
-                    }*/
+                        method  : "getJobList"
+                    }
                 },
                 remoteSort : true,
                 sorters    : [{

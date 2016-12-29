@@ -19,75 +19,27 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-require_once("openmediavault/module.inc");
-require_once("openmediavault/error.inc");
 
-class OMVModuleWakealarm extends OMVModuleServiceAbstract
-  implements OMVINotifyListener
+class OMVModuleWakealarm extends \OMV\Engine\Module\ServiceAbstract
+    implements \OMV\Engine\Notify\IListener
 {
-    /**
-     * Get the module name.
-     */
     public function getName()
     {
         return "wakealarm";
     }
 
-    private function getPluginName()
-    {
-        return strtolower( $this->getName() );
-    }
-
-    private function getEventMessagePath()
-    {
-        return sprintf( "org.openmediavault.system.%s", $this->getPluginName() );
-    }
-
-    private function getEventMessagePathJob()
-    {
-        return sprintf( "%s.jobs.job", $this->getEventMessagePath() );
-    }
-
-    /**
-     * Defines the modules that if present should start before the service
-     * provided by this module.
-     * @return An array of modules.
-     */
-    public function shouldStart() { return array("email"); }
-
-    /**
-     * Defines the modules that if present should be stopped after the
-     * service provided by this module.
-     * @return An array of modules.
-     */
-    function shouldStop() { return array("email"); }
-
-    /**
-     * Generate the configuration.
-     * @throw E_EXEC_FAILED
-     */
     public function applyConfig() {
-        $cmd = "omv-mkconf wakealarm 2>&1";
-        if(0 !== $this->exec($cmd, $output)) {
-            throw new OMVException(
-                OMVErrorMsg::E_EXEC_FAILED,
-                $cmd,
-                implode("\n", $output)
-            );
-        }
+        $cmd = new \OMV\System\Process("omv-mkconf", "wakealarm");
+        $cmd->setRedirect2to1();
+        $cmd->execute();
     }
 
-    /**
-     * Bind listeners.
-     */
-    function bindListeners(OMVNotifyDispatcher $dispatcher) {
+    public function bindListeners(\OMV\Engine\Notify\Dispatcher $dispatcher)
+    {
         $dispatcher->addListener(
-          OMV_NOTIFY_CREATE | OMV_NOTIFY_MODIFY | OMV_NOTIFY_DELETE,
-          $this->getEventMessagePathJob(),
-          array($this, "setDirty"));
+            OMV_NOTIFY_CREATE | OMV_NOTIFY_MODIFY | OMV_NOTIFY_DELETE,
+            "org.openmediavault.conf.system.wakealarm.job",
+            [ $this, "setDirty" ]
+        );
     }
 }
-
-// Register module.
-$moduleMgr = &OMVModuleMgr::getInstance();
-$moduleMgr->registerModule(new OMVModuleWakealarm());

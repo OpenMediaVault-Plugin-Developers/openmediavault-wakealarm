@@ -11,12 +11,10 @@ case "$1" in
         SERVICE_XPATH="/config/system/${SERVICE_XPATH_NAME}"
 
         if ! omv_config_exists "${SERVICE_XPATH}"; then
-            omv_config_add_element "/config/system" "${SERVICE_XPATH_NAME}"
-            omv_config_add_element "${SERVICE_XPATH}" "jobs" ""
+            omv_config_add_node "/config/system" "${SERVICE_XPATH_NAME}"
+            omv_config_add_node "${SERVICE_XPATH}" "jobs"
         fi
 
-        # Activate package triggers. These triggers are only set during the
-        # package installation.
         dpkg-trigger update-fixperms
         dpkg-trigger update-locale
     ;;
