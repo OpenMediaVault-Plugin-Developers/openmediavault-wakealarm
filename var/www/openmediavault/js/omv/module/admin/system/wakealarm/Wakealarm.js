@@ -229,6 +229,7 @@ Ext.define("OMV.module.admin.system.wakealarm.Jobs", {
         trueIcon  : "switch_on.png",
         falseIcon : "switch_off.png"
     },{
+        xtype     : "textcolumn",
         text      : _("Minute"),
         sortable  : true,
         dataIndex : "minute",
@@ -241,6 +242,7 @@ Ext.define("OMV.module.admin.system.wakealarm.Jobs", {
             return value;
         }
     },{
+        xtype     : "textcolumn",
         text      : _("Hour"),
         sortable  : true,
         dataIndex : "hour",
@@ -255,6 +257,7 @@ Ext.define("OMV.module.admin.system.wakealarm.Jobs", {
             return value;
         }
     },{
+        xtype     : "textcolumn",
         text      : _("Day of month"),
         sortable  : true,
         dataIndex : "dayofmonth",
@@ -270,18 +273,21 @@ Ext.define("OMV.module.admin.system.wakealarm.Jobs", {
             return value;
         }
     },{
+        xtype     : "textcolumn",
         text      : _("Month"),
         sortable  : true,
         dataIndex : "month",
         stateId   : "month",
         renderer  : OMV.util.Format.arrayRenderer(Date.mapMonth)
     },{
+        xtype     : "textcolumn",
         text      : _("Day of week"),
         sortable  : true,
         dataIndex : "dayofweek",
         stateId   : "dayofweek",
         renderer  : OMV.util.Format.arrayRenderer(Date.mapDayOfWeek)
     },{
+        xtype     : "textcolumn",
         text      : _("Comment"),
         sortable  : true,
         dataIndex : "comment",

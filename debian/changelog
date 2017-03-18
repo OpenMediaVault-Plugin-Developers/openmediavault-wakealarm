@@ -1,3 +1,9 @@
+openmediavault-wakealarm (3.3) stable; urgency=low
+
+  * Improve foreign content handling
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sat, 18 Mar 2017 12:49:15 -0500
+
 openmediavault-wakealarm (3.2) stable; urgency=low
 
   * Update for datamodels
