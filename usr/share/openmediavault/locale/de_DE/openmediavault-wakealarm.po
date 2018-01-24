@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-04 06:14-0600\n"
-"PO-Revision-Date: 2015-03-04 12:18+0000\n"
+"PO-Revision-Date: 2018-01-24 19:56+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/openmediavault-wakealarm/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -18,46 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add scheduled job"
-msgstr ""
-
-msgid "Comment"
-msgstr ""
-
-msgid "Day of month"
-msgstr ""
-
-msgid "Day of week"
-msgstr ""
+msgstr "Geplante Aufgabe hinzufügen"
 
 msgid "Edit scheduled job"
-msgstr ""
-
-msgid "Enable"
-msgstr ""
-
-msgid "Enabled"
-msgstr ""
-
-msgid "Every N day of month"
-msgstr ""
-
-msgid "Every N hour"
-msgstr ""
-
-msgid "Every N minute"
-msgstr ""
-
-msgid "Hour"
-msgstr ""
-
-msgid "Minute"
-msgstr ""
-
-msgid "Month"
-msgstr ""
+msgstr "Geplante Aufgabe bearbeiten"
 
 msgid "Ranges of numbers are not allowed"
-msgstr ""
+msgstr "Zahlenbereiche sind nicht erlaubt"
 
 msgid "Scheduled wakealarms"
-msgstr ""
+msgstr "Geplante Weckzeiten"
