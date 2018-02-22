@@ -1,63 +1,65 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the openmediavault-wakealarm package.
 # 
 # Translators:
+# Alexander Savchenko, 2015
+# Артур Мудрых <arturmon82@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-04 06:14-0600\n"
-"PO-Revision-Date: 2015-03-04 12:18+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Russian (http://www.transifex.com/projects/p/openmediavault-wakealarm/language/ru/)\n"
+"POT-Creation-Date: 2018-02-22 11:44-0600\n"
+"PO-Revision-Date: 2017-09-22 01:14+0000\n"
+"Last-Translator: Артур Мудрых <arturmon82@gmail.com>\n"
+"Language-Team: Russian (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 msgid "Add scheduled job"
-msgstr ""
+msgstr "Добавить запланированное задание"
 
 msgid "Comment"
-msgstr ""
+msgstr "Комментарий"
 
 msgid "Day of month"
-msgstr ""
+msgstr "День месяца"
 
 msgid "Day of week"
-msgstr ""
+msgstr "День недели"
 
 msgid "Edit scheduled job"
-msgstr ""
+msgstr "Изменить запланированное задание"
 
 msgid "Enable"
-msgstr ""
+msgstr "Включить"
 
 msgid "Enabled"
-msgstr ""
+msgstr "Включено"
 
 msgid "Every N day of month"
-msgstr ""
+msgstr "Каждый N-й день месяца"
 
 msgid "Every N hour"
-msgstr ""
+msgstr "Каждые N час"
 
 msgid "Every N minute"
-msgstr ""
+msgstr "Каждые N минут"
 
 msgid "Hour"
-msgstr ""
+msgstr "Час"
 
 msgid "Minute"
-msgstr ""
+msgstr "Минута"
 
 msgid "Month"
-msgstr ""
+msgstr "Месяц"
 
 msgid "Ranges of numbers are not allowed"
-msgstr ""
+msgstr "Диапазоны чисел не допускаются"
 
 msgid "Scheduled wakealarms"
-msgstr ""
+msgstr "Запланированное пробуждение"

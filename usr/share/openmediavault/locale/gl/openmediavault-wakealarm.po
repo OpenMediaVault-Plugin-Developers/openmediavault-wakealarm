@@ -1,16 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the openmediavault-wakealarm package.
 # 
 # Translators:
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-04 06:14-0600\n"
-"PO-Revision-Date: 2015-03-04 12:18+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Galician (http://www.transifex.com/projects/p/openmediavault-wakealarm/language/gl/)\n"
+"POT-Creation-Date: 2018-02-22 11:44-0600\n"
+"PO-Revision-Date: 2017-09-23 20:53+0000\n"
+"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>\n"
+"Language-Team: Galician (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/gl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,46 +19,46 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add scheduled job"
-msgstr ""
+msgstr "Engadir unha tarefa programada"
 
 msgid "Comment"
-msgstr ""
+msgstr "Comentario"
 
 msgid "Day of month"
-msgstr ""
+msgstr "Día do mes"
 
 msgid "Day of week"
-msgstr ""
+msgstr "Día da semana"
 
 msgid "Edit scheduled job"
-msgstr ""
+msgstr "Editar unha tarefa programada"
 
 msgid "Enable"
-msgstr ""
+msgstr "Activar"
 
 msgid "Enabled"
-msgstr ""
+msgstr "Activado"
 
 msgid "Every N day of month"
-msgstr ""
+msgstr "Cada N días do mes"
 
 msgid "Every N hour"
-msgstr ""
+msgstr "Cada N horas"
 
 msgid "Every N minute"
-msgstr ""
+msgstr "Cada N minutos"
 
 msgid "Hour"
-msgstr ""
+msgstr "Hora"
 
 msgid "Minute"
-msgstr ""
+msgstr "Minuto"
 
 msgid "Month"
-msgstr ""
+msgstr "Mes"
 
 msgid "Ranges of numbers are not allowed"
-msgstr ""
+msgstr "Non están permitidos os rangos de números"
 
 msgid "Scheduled wakealarms"
-msgstr ""
+msgstr "Alarmas de despertador programadas"

@@ -1,16 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the openmediavault-wakealarm package.
 # 
 # Translators:
+# Stefan Thrane Overby <stoverby@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-04 06:14-0600\n"
-"PO-Revision-Date: 2015-03-04 12:18+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Danish (http://www.transifex.com/projects/p/openmediavault-wakealarm/language/da/)\n"
+"POT-Creation-Date: 2018-02-22 11:44-0600\n"
+"PO-Revision-Date: 2017-09-22 01:14+0000\n"
+"Last-Translator: Stefan Thrane Overby <stoverby@gmail.com>\n"
+"Language-Team: Danish (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,46 +19,46 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add scheduled job"
-msgstr ""
+msgstr "Tilføj planlagt opgave"
 
 msgid "Comment"
-msgstr ""
+msgstr "Kommentar"
 
 msgid "Day of month"
-msgstr ""
+msgstr "Månedsdag"
 
 msgid "Day of week"
-msgstr ""
+msgstr "Ugedag"
 
 msgid "Edit scheduled job"
-msgstr ""
+msgstr "Rediger planlagt opgave"
 
 msgid "Enable"
-msgstr ""
+msgstr "Aktiver"
 
 msgid "Enabled"
-msgstr ""
+msgstr "Aktiveret"
 
 msgid "Every N day of month"
-msgstr ""
+msgstr "Hver N månedsdag"
 
 msgid "Every N hour"
-msgstr ""
+msgstr "Hver N time"
 
 msgid "Every N minute"
-msgstr ""
+msgstr "Hver N minut"
 
 msgid "Hour"
-msgstr ""
+msgstr "Time"
 
 msgid "Minute"
-msgstr ""
+msgstr "Minut"
 
 msgid "Month"
-msgstr ""
+msgstr "Måned"
 
 msgid "Ranges of numbers are not allowed"
-msgstr ""
+msgstr "Række af numre er ikke tilladt"
 
 msgid "Scheduled wakealarms"
-msgstr ""
+msgstr "Planlagte wakealarmer"

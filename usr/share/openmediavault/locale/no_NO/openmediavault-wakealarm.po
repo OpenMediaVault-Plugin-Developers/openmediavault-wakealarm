@@ -1,16 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the openmediavault-wakealarm package.
 # 
 # Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-04 06:14-0600\n"
+"POT-Creation-Date: 2018-02-22 11:44-0600\n"
 "PO-Revision-Date: 2015-03-04 12:18+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Norwegian (http://www.transifex.com/projects/p/openmediavault-wakealarm/language/no/)\n"
+"Language-Team: Norwegian (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/no/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
