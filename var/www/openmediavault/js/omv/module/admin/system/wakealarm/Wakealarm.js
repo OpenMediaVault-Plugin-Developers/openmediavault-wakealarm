@@ -218,16 +218,11 @@ Ext.define("OMV.module.admin.system.wakealarm.Jobs", {
     stateful          : true,
     stateId           : "a882a76d-6804-4632-b31b-8b48c0ea6dde",
     columns           : [{
-        xtype     : "booleaniconcolumn",
+        xtype     : "enabledcolumn",
         text      : _("Enabled"),
         sortable  : true,
         dataIndex : "enable",
         stateId   : "enable",
-        align     : "center",
-        width     : 80,
-        resizable : false,
-        trueIcon  : "switch_on.png",
-        falseIcon : "switch_off.png"
     },{
         xtype     : "textcolumn",
         text      : _("Minute"),
