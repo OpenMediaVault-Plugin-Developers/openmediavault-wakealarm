@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-22 11:44-0600\n"
-"PO-Revision-Date: 2018-02-22 16:51+0000\n"
+"PO-Revision-Date: 2018-02-22 18:34+0000\n"
 "Last-Translator: Micha K <pikim@web.de>\n"
 "Language-Team: German (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/de/)\n"
 "MIME-Version: 1.0\n"
@@ -26,10 +26,10 @@ msgid "Comment"
 msgstr "Kommentar"
 
 msgid "Day of month"
-msgstr "Monat"
+msgstr "Tag des Monats"
 
 msgid "Day of week"
-msgstr "Tag des Monats"
+msgstr "Wochentag"
 
 msgid "Edit scheduled job"
 msgstr "Geplante Aufgabe bearbeiten"
@@ -41,13 +41,13 @@ msgid "Enabled"
 msgstr "Aktiviert"
 
 msgid "Every N day of month"
-msgstr "Jeden N Tag des Monates"
+msgstr "Jeden Nten Tag des Monates"
 
 msgid "Every N hour"
-msgstr "Jede N Stunde"
+msgstr "Jede Nte Stunde"
 
 msgid "Every N minute"
-msgstr "Jede N Minute"
+msgstr "Jede Nte Minute"
 
 msgid "Hour"
 msgstr "Stunde"
