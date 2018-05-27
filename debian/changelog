@@ -1,3 +1,10 @@
+openmediavault-wakealarm (4.0) stable; urgency=low
+
+  * Fix the pattern attribute in the JSON schemas according to the ECMA
+    262 regular expression dialect.
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sun, 27 May 2018 13:38:00 -0500
+
 openmediavault-wakealarm (3.4) stable; urgency=low
 
   * Update enabled column
