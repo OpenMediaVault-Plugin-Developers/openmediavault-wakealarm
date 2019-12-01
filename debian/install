@@ -1,5 +1,6 @@
-usr/share/openmediavault/*  usr/share/openmediavault
-var/www/openmediavault/*    var/www/openmediavault
-etc/cron.d/*                etc/cron.d
-etc/rsyslog.d/*             etc/rsyslog.d
-usr/sbin/*                  usr/sbin
+etc/cron.d/* etc/cron.d
+etc/rsyslog.d/* etc/rsyslog.d
+srv/* srv
+usr/sbin/* usr/sbin
+usr/share/openmediavault/* usr/share/openmediavault
+var/www/openmediavault/* var/www/openmediavault

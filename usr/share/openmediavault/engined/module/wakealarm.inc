@@ -4,7 +4,7 @@
  * @author    Volker Theile <volker.theile@openmediavault.org>
  * @author    OpenMediaVault Plugin Developers <plugins@omv-extras.org>
  * @copyright Copyright (c) 2009-2013 Volker Theile
- * @copyright Copyright (c) 2014-2016 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2014-2019 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,12 +26,6 @@ class OMVModuleWakealarm extends \OMV\Engine\Module\ServiceAbstract
     public function getName()
     {
         return "wakealarm";
-    }
-
-    public function applyConfig() {
-        $cmd = new \OMV\System\Process("omv-mkconf", "wakealarm");
-        $cmd->setRedirect2to1();
-        $cmd->execute();
     }
 
     public function bindListeners(\OMV\Engine\Notify\Dispatcher $dispatcher)

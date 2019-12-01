@@ -1,0 +1,8 @@
+{{ pillar['headers']['multiline'] }}
+# m h dom mon dow
+{% for job in config.jobs.job | selectattr('enable') %}
+{{ '*/minute ' if job.everynminute | to_bool else 'minute ' }}
+{{ '*/hour ' if job.everynhour | to_bool else 'hour ' }}
+{{ '*/dayofmonth ' if job.everyndayofmonth | to_bool else 'dayofmonth ' }}
+month dayofweek
+{%- endfor %}

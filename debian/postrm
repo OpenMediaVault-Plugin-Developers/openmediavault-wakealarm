@@ -5,8 +5,14 @@ set -e
 . /etc/default/openmediavault
 . /usr/share/openmediavault/scripts/helper-functions
 
+remove_action() {
+    dpkg-trigger update-fixperms
+}
+
 case "$1" in
     purge)
+        remove_action
+
         SERVICE_XPATH_NAME="wakealarm"
         SERVICE_XPATH="/config/system/${SERVICE_XPATH_NAME}"
 
@@ -16,6 +22,7 @@ case "$1" in
     ;;
 
     remove)
+        remove_action
     ;;
 
     upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
