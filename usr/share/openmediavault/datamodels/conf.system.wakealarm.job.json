@@ -3,7 +3,7 @@
 	"id": "conf.system.wakealarm.job",
 	"title": "Wakealarm job",
 	"queryinfo": {
-		"xpath": "//system/wakealarm/jobs/job",
+		"xpath": "/config/system/wakealarm/jobs/job",
 		"iterable": true,
 		"idproperty": "uuid"
 	},
