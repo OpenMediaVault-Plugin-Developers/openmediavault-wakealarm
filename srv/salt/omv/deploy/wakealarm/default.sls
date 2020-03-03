@@ -1,6 +1,6 @@
 # @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
 # @author    OpenMediaVault Plugin Developers <plugins@omv-extras.org>
-# @copyright Copyright (c) 2019 OpenMediaVault Plugin Developers
+# @copyright Copyright (c) 2019-2020 OpenMediaVault Plugin Developers
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ configure_wakealarm:
   file.managed:
     - name: "/etc/wakealarm.conf"
     - source:
-      - salt://{{ slspath }}/files/etc-wakealarm_conf.j2
+      - salt://{{ tpldir }}/files/etc-wakealarm_conf.j2
     - template: jinja
     - context:
         config: {{ config | json }}
