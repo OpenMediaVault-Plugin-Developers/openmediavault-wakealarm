@@ -28,3 +28,18 @@ configure_wakealarm:
     - user: root
     - group: root
     - mode: 644
+
+configure_wakealarm_logrotate:
+  file.managed:
+    - name: "/etc/logrotate.d/wakealarm"
+    - contents: |
+        /var/log/wakealarm.log {
+            rotate 4
+            weekly
+            compress
+            missingok
+            notifempty
+        }
+    - user: root
+    - group: root
+    - mode: 644
