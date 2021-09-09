@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the openmediavault-wakealarm package.
 # 
 # Translators:
+# dsafsadf <heneral@gmail.com>, 2021
 # zubr139, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-22 11:44-0600\n"
-"PO-Revision-Date: 2017-09-22 01:14+0000\n"
-"Last-Translator: zubr139\n"
+"PO-Revision-Date: 2021-03-10 17:15+0000\n"
+"Last-Translator: dsafsadf <heneral@gmail.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,34 +20,34 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 msgid "Add scheduled job"
-msgstr ""
+msgstr "Додати заплановане завдання"
 
 msgid "Comment"
-msgstr ""
+msgstr "Коментар"
 
 msgid "Day of month"
-msgstr ""
+msgstr "День місяця"
 
 msgid "Day of week"
-msgstr ""
+msgstr "День тижня"
 
 msgid "Edit scheduled job"
-msgstr ""
+msgstr "Змінити заплановане завдання"
 
 msgid "Enable"
-msgstr ""
+msgstr "Увімкнути"
 
 msgid "Enabled"
-msgstr ""
+msgstr "Увімкнено"
 
 msgid "Every N day of month"
-msgstr ""
+msgstr "Кожен N день місяця"
 
 msgid "Every N hour"
-msgstr ""
+msgstr "Кожні N годин"
 
 msgid "Every N minute"
-msgstr ""
+msgstr "Кожні N хвилин"
 
 msgid "Hour"
 msgstr "Година"
@@ -55,10 +56,10 @@ msgid "Minute"
 msgstr "Хвилина"
 
 msgid "Month"
-msgstr ""
+msgstr "Місяць"
 
 msgid "Ranges of numbers are not allowed"
-msgstr ""
+msgstr "Діапазони чисел не дозволяються"
 
 msgid "Scheduled wakealarms"
-msgstr ""
+msgstr "Планові будильники"

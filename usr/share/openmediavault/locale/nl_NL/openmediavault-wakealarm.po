@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the openmediavault-wakealarm package.
 # 
 # Translators:
+# Varkentjes, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-22 11:44-0600\n"
-"PO-Revision-Date: 2015-03-04 12:18+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2020-11-17 19:52+0000\n"
+"Last-Translator: Varkentjes\n"
 "Language-Team: Dutch (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,46 +19,46 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add scheduled job"
-msgstr ""
+msgstr "Voeg geplande taak toe"
 
 msgid "Comment"
-msgstr ""
+msgstr "Opmerking"
 
 msgid "Day of month"
-msgstr ""
+msgstr "Dag van de maand"
 
 msgid "Day of week"
-msgstr ""
+msgstr "Dag van de week"
 
 msgid "Edit scheduled job"
-msgstr ""
+msgstr "Bewerk geplande taak"
 
 msgid "Enable"
-msgstr ""
+msgstr "Inschakelen"
 
 msgid "Enabled"
-msgstr ""
+msgstr "Ingeschakeld"
 
 msgid "Every N day of month"
-msgstr ""
+msgstr "Elke N dag van de maand"
 
 msgid "Every N hour"
-msgstr ""
+msgstr "Elke N uur"
 
 msgid "Every N minute"
-msgstr ""
+msgstr "Elke N minuut"
 
 msgid "Hour"
-msgstr ""
+msgstr "Uur"
 
 msgid "Minute"
-msgstr ""
+msgstr "Minuut"
 
 msgid "Month"
-msgstr ""
+msgstr "Maand"
 
 msgid "Ranges of numbers are not allowed"
-msgstr ""
+msgstr "Getallenreeksen zijn niet toegestaan"
 
 msgid "Scheduled wakealarms"
-msgstr ""
+msgstr "Geplande wekalarmen"
