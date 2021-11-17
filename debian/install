@@ -1,6 +1,4 @@
 etc/cron.d/* etc/cron.d
 etc/rsyslog.d/* etc/rsyslog.d
 srv/* srv
-usr/sbin/* usr/sbin
-usr/share/openmediavault/* usr/share/openmediavault
-var/www/openmediavault/* var/www/openmediavault
+usr/* usr

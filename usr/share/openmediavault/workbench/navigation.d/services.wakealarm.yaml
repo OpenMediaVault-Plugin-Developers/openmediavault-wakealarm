@@ -1,0 +1,7 @@
+version: "1.0"
+type: navigation-item
+data:
+  path: "services.wakealarm"
+  text: _("Scheduled Alarms")
+  icon: "mdi:alarm-multiple"
+  url: "/services/wakealarm"

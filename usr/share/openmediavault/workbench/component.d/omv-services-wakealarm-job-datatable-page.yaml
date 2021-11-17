@@ -1,0 +1,56 @@
+version: "1.0"
+type: component
+data:
+  name: omv-services-wakealarm-jobs-datatable-page
+  type: datatablePage
+  config:
+    autoReload: false
+    stateId: a882a76d-6804-4632-b31b-8b48c0ea6dde
+    sorters:
+      - dir: asc
+        prop: enable
+    store:
+      proxy:
+        service: Wakealarm
+        get:
+          method: getJobList
+    columns:
+      - name: _("Enabled")
+        prop: enable
+        flexGrow: 1
+        sortable: true
+        cellTemplateName: checkIcon
+      - name: _("Scheduling")
+        prop: ""
+        flexGrow: 1
+        cellTemplateName: template
+        cellTemplateConfig: |
+          {% set _minute = minute %}
+          {% set _hour = hour %}
+          {% set _dayofmonth = dayofmonth %}
+          {% if everynminute %}{% set _minute %}*/{{ minute }}{% endset %}{% endif %}
+          {% if everynhour %}{% set _hour %}*/{{ hour }}{% endset %}{% endif %}
+          {% if everyndayofmonth %}{% set _dayofmonth %}*/{{ dayofmonth }}{% endset %}{% endif %}
+          {{ _minute }} {{ _hour }} {{ _dayofmonth }} {{ month }} {{ dayofweek }}
+      - name: _("Comment")
+        prop: comment
+        cellTemplateName: text
+        flexGrow: 2
+        sortable: true
+    actions:
+      - template: create
+        execute:
+          type: url
+          url: "/services/wakealarm/jobs/create"
+      - template: edit
+        execute:
+          type: url
+          url: "/services/wakealarm/jobs/edit/{{ _selected[0].uuid }}"
+      - template: delete
+        execute:
+          type: request
+          request:
+            service: Wakealarm
+            method: deleteJob
+            params:
+              uuid: "{{ _selected[0].uuid }}"

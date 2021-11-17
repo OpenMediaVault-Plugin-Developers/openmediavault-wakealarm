@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-22 11:44-0600\n"
-"PO-Revision-Date: 2017-09-22 01:14+0000\n"
-"Last-Translator: kochin <kochinc@outlook.com>\n"
+"POT-Creation-Date: 2021-11-17 06:50-0600\n"
+"PO-Revision-Date: 2021-11-17 12:51+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,11 +18,20 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "Add scheduled job"
-msgstr "新增預定工作"
+msgid "April"
+msgstr ""
+
+msgid "August"
+msgstr ""
 
 msgid "Comment"
 msgstr "註釋"
+
+msgid "Create"
+msgstr ""
+
+msgid "Created scheduled job."
+msgstr ""
 
 msgid "Day of month"
 msgstr "月內第幾日"
@@ -30,11 +39,11 @@ msgstr "月內第幾日"
 msgid "Day of week"
 msgstr "週內第幾日"
 
-msgid "Edit scheduled job"
-msgstr "編輯預定工作"
+msgid "December"
+msgstr ""
 
-msgid "Enable"
-msgstr "啟用"
+msgid "Edit"
+msgstr ""
 
 msgid "Enabled"
 msgstr "已啟用"
@@ -48,17 +57,71 @@ msgstr "每 N 小時"
 msgid "Every N minute"
 msgstr "每 N 分鐘"
 
+msgid "February"
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
 msgid "Hour"
 msgstr "時"
+
+msgid "January"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "May"
+msgstr ""
 
 msgid "Minute"
 msgstr "分"
 
+msgid "Monday"
+msgstr ""
+
 msgid "Month"
 msgstr "月"
 
-msgid "Ranges of numbers are not allowed"
-msgstr "數目的範圍不被允許"
+msgid "November"
+msgstr ""
 
-msgid "Scheduled wakealarms"
-msgstr "已預定的喚醒鬧鈴"
+msgid "October"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Scheduled Alarms"
+msgstr ""
+
+msgid "Scheduling"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "Sunday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Updated scheduled job."
+msgstr ""
+
+msgid "Wakealarm"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""

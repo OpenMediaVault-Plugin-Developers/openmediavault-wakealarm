@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-22 11:44-0600\n"
-"PO-Revision-Date: 2017-09-22 01:14+0000\n"
-"Last-Translator: songming <by@songming.me>\n"
+"POT-Creation-Date: 2021-11-17 06:50-0600\n"
+"PO-Revision-Date: 2021-11-17 12:51+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,11 +18,20 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "Add scheduled job"
-msgstr "添加计划任务"
+msgid "April"
+msgstr ""
+
+msgid "August"
+msgstr ""
 
 msgid "Comment"
 msgstr "注释"
+
+msgid "Create"
+msgstr ""
+
+msgid "Created scheduled job."
+msgstr ""
 
 msgid "Day of month"
 msgstr "一月中第几天"
@@ -30,11 +39,11 @@ msgstr "一月中第几天"
 msgid "Day of week"
 msgstr "一周中第几天"
 
-msgid "Edit scheduled job"
-msgstr "编辑计划任务"
+msgid "December"
+msgstr ""
 
-msgid "Enable"
-msgstr "启用"
+msgid "Edit"
+msgstr ""
 
 msgid "Enabled"
 msgstr "已启用"
@@ -48,17 +57,71 @@ msgstr "每N小时"
 msgid "Every N minute"
 msgstr "每N分钟"
 
+msgid "February"
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
 msgid "Hour"
 msgstr "小时"
+
+msgid "January"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "May"
+msgstr ""
 
 msgid "Minute"
 msgstr "分钟"
 
+msgid "Monday"
+msgstr ""
+
 msgid "Month"
 msgstr "月"
 
-msgid "Ranges of numbers are not allowed"
-msgstr "不允许的数字范围"
+msgid "November"
+msgstr ""
 
-msgid "Scheduled wakealarms"
-msgstr "计划唤醒"
+msgid "October"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Scheduled Alarms"
+msgstr ""
+
+msgid "Scheduling"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "Sunday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Updated scheduled job."
+msgstr ""
+
+msgid "Wakealarm"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""

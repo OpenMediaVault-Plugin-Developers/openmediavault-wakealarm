@@ -1,0 +1,6 @@
+version: "1.0"
+type: route
+data:
+  url: "/services/wakealarm/jobs"
+  title: _("Scheduled Alarms")
+  component: omv-services-wakealarm-jobs-datatable-page

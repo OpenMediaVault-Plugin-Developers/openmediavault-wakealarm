@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-22 11:44-0600\n"
-"PO-Revision-Date: 2015-03-04 12:18+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2021-11-17 06:50-0600\n"
+"PO-Revision-Date: 2021-11-17 12:51+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Occitan (post 1500) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/oc/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,10 +17,19 @@ msgstr ""
 "Language: oc\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "Add scheduled job"
+msgid "April"
+msgstr ""
+
+msgid "August"
 msgstr ""
 
 msgid "Comment"
+msgstr ""
+
+msgid "Create"
+msgstr ""
+
+msgid "Created scheduled job."
 msgstr ""
 
 msgid "Day of month"
@@ -29,10 +38,10 @@ msgstr ""
 msgid "Day of week"
 msgstr ""
 
-msgid "Edit scheduled job"
+msgid "December"
 msgstr ""
 
-msgid "Enable"
+msgid "Edit"
 msgstr ""
 
 msgid "Enabled"
@@ -47,17 +56,71 @@ msgstr ""
 msgid "Every N minute"
 msgstr ""
 
+msgid "February"
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
 msgid "Hour"
+msgstr ""
+
+msgid "January"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "May"
 msgstr ""
 
 msgid "Minute"
 msgstr ""
 
+msgid "Monday"
+msgstr ""
+
 msgid "Month"
 msgstr ""
 
-msgid "Ranges of numbers are not allowed"
+msgid "November"
 msgstr ""
 
-msgid "Scheduled wakealarms"
+msgid "October"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Scheduled Alarms"
+msgstr ""
+
+msgid "Scheduling"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "Sunday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Updated scheduled job."
+msgstr ""
+
+msgid "Wakealarm"
+msgstr ""
+
+msgid "Wednesday"
 msgstr ""

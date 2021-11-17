@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-22 11:44-0600\n"
-"PO-Revision-Date: 2017-09-22 01:14+0000\n"
-"Last-Translator: Stefan Thrane Overby <stoverby@gmail.com>\n"
+"POT-Creation-Date: 2021-11-17 06:50-0600\n"
+"PO-Revision-Date: 2021-11-17 12:51+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
 "Language-Team: Danish (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,11 +18,20 @@ msgstr ""
 "Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Add scheduled job"
-msgstr "Tilføj planlagt opgave"
+msgid "April"
+msgstr ""
+
+msgid "August"
+msgstr ""
 
 msgid "Comment"
 msgstr "Kommentar"
+
+msgid "Create"
+msgstr ""
+
+msgid "Created scheduled job."
+msgstr ""
 
 msgid "Day of month"
 msgstr "Månedsdag"
@@ -30,11 +39,11 @@ msgstr "Månedsdag"
 msgid "Day of week"
 msgstr "Ugedag"
 
-msgid "Edit scheduled job"
-msgstr "Rediger planlagt opgave"
+msgid "December"
+msgstr ""
 
-msgid "Enable"
-msgstr "Aktiver"
+msgid "Edit"
+msgstr ""
 
 msgid "Enabled"
 msgstr "Aktiveret"
@@ -48,17 +57,71 @@ msgstr "Hver N time"
 msgid "Every N minute"
 msgstr "Hver N minut"
 
+msgid "February"
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
 msgid "Hour"
 msgstr "Time"
+
+msgid "January"
+msgstr ""
+
+msgid "July"
+msgstr ""
+
+msgid "June"
+msgstr ""
+
+msgid "March"
+msgstr ""
+
+msgid "May"
+msgstr ""
 
 msgid "Minute"
 msgstr "Minut"
 
+msgid "Monday"
+msgstr ""
+
 msgid "Month"
 msgstr "Måned"
 
-msgid "Ranges of numbers are not allowed"
-msgstr "Række af numre er ikke tilladt"
+msgid "November"
+msgstr ""
 
-msgid "Scheduled wakealarms"
-msgstr "Planlagte wakealarmer"
+msgid "October"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgid "Scheduled Alarms"
+msgstr ""
+
+msgid "Scheduling"
+msgstr ""
+
+msgid "September"
+msgstr ""
+
+msgid "Sunday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Updated scheduled job."
+msgstr ""
+
+msgid "Wakealarm"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
