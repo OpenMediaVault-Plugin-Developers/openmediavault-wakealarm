@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the openmediavault-wakealarm package.
 # 
 # Translators:
-# kochin <kochinc@outlook.com>, 2015
+# kochin <kochinc@outlook.com>, 2015,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-17 06:50-0600\n"
-"PO-Revision-Date: 2021-11-17 12:51+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
+"PO-Revision-Date: 2021-11-17 21:11+0000\n"
+"Last-Translator: kochin <kochinc@outlook.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,19 +19,19 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "April"
-msgstr ""
+msgstr "四月"
 
 msgid "August"
-msgstr ""
+msgstr "八月"
 
 msgid "Comment"
 msgstr "註釋"
 
 msgid "Create"
-msgstr ""
+msgstr "新建"
 
 msgid "Created scheduled job."
-msgstr ""
+msgstr "已建立預定工作。"
 
 msgid "Day of month"
 msgstr "月內第幾日"
@@ -40,10 +40,10 @@ msgid "Day of week"
 msgstr "週內第幾日"
 
 msgid "December"
-msgstr ""
+msgstr "十二月"
 
 msgid "Edit"
-msgstr ""
+msgstr "編輯"
 
 msgid "Enabled"
 msgstr "已啟用"
@@ -58,70 +58,70 @@ msgid "Every N minute"
 msgstr "每 N 分鐘"
 
 msgid "February"
-msgstr ""
+msgstr "二月"
 
 msgid "Friday"
-msgstr ""
+msgstr "週五"
 
 msgid "Hour"
 msgstr "時"
 
 msgid "January"
-msgstr ""
+msgstr "一月"
 
 msgid "July"
-msgstr ""
+msgstr "七月"
 
 msgid "June"
-msgstr ""
+msgstr "六月"
 
 msgid "March"
-msgstr ""
+msgstr "三月"
 
 msgid "May"
-msgstr ""
+msgstr "五月"
 
 msgid "Minute"
 msgstr "分"
 
 msgid "Monday"
-msgstr ""
+msgstr "週一"
 
 msgid "Month"
 msgstr "月"
 
 msgid "November"
-msgstr ""
+msgstr "十一月"
 
 msgid "October"
-msgstr ""
+msgstr "十月"
 
 msgid "Saturday"
-msgstr ""
+msgstr "週六"
 
 msgid "Scheduled Alarms"
-msgstr ""
+msgstr "已預定鬧鈴"
 
 msgid "Scheduling"
-msgstr ""
+msgstr "預定"
 
 msgid "September"
-msgstr ""
+msgstr "九月"
 
 msgid "Sunday"
-msgstr ""
+msgstr "週日"
 
 msgid "Thursday"
-msgstr ""
+msgstr "週四"
 
 msgid "Tuesday"
-msgstr ""
+msgstr "週二"
 
 msgid "Updated scheduled job."
-msgstr ""
+msgstr "已更新預定工作。"
 
 msgid "Wakealarm"
-msgstr ""
+msgstr "喚醒鬧鈴"
 
 msgid "Wednesday"
-msgstr ""
+msgstr "週三"

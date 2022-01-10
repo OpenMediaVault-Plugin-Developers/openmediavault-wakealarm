@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the openmediavault-wakealarm package.
 # 
 # Translators:
-# Pavel Borecki <pavel.borecki@gmail.com>, 2015
+# Pavel Borecki <pavel.borecki@gmail.com>, 2015,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-17 06:50-0600\n"
-"PO-Revision-Date: 2021-11-17 12:51+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
+"PO-Revision-Date: 2021-12-14 14:15+0000\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech (Czech Republic) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,19 +19,19 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 msgid "April"
-msgstr ""
+msgstr "duben"
 
 msgid "August"
-msgstr ""
+msgstr "srpen"
 
 msgid "Comment"
 msgstr "Komentář"
 
 msgid "Create"
-msgstr ""
+msgstr "Vytvořit"
 
 msgid "Created scheduled job."
-msgstr ""
+msgstr "Naplánovaná úloha vytvořena."
 
 msgid "Day of month"
 msgstr "Den v měsíci"
@@ -40,10 +40,10 @@ msgid "Day of week"
 msgstr "Den v týdnu"
 
 msgid "December"
-msgstr ""
+msgstr "prosinec"
 
 msgid "Edit"
-msgstr ""
+msgstr "Upravit"
 
 msgid "Enabled"
 msgstr "Používáno"
@@ -58,70 +58,70 @@ msgid "Every N minute"
 msgstr "Každých N minut"
 
 msgid "February"
-msgstr ""
+msgstr "únor"
 
 msgid "Friday"
-msgstr ""
+msgstr "pátek"
 
 msgid "Hour"
 msgstr "Hodina"
 
 msgid "January"
-msgstr ""
+msgstr "leden"
 
 msgid "July"
-msgstr ""
+msgstr "červenec"
 
 msgid "June"
-msgstr ""
+msgstr "červen"
 
 msgid "March"
-msgstr ""
+msgstr "březen"
 
 msgid "May"
-msgstr ""
+msgstr "květen"
 
 msgid "Minute"
 msgstr "Minuta"
 
 msgid "Monday"
-msgstr ""
+msgstr "pondělí"
 
 msgid "Month"
 msgstr "Měsíc"
 
 msgid "November"
-msgstr ""
+msgstr "listopad"
 
 msgid "October"
-msgstr ""
+msgstr "říjen"
 
 msgid "Saturday"
-msgstr ""
+msgstr "sobota"
 
 msgid "Scheduled Alarms"
-msgstr ""
+msgstr "Naplánované výstrahy"
 
 msgid "Scheduling"
-msgstr ""
+msgstr "Plánování"
 
 msgid "September"
-msgstr ""
+msgstr "září"
 
 msgid "Sunday"
-msgstr ""
+msgstr "neděle"
 
 msgid "Thursday"
-msgstr ""
+msgstr "čtvrtek"
 
 msgid "Tuesday"
-msgstr ""
+msgstr "úterý"
 
 msgid "Updated scheduled job."
-msgstr ""
+msgstr "Naplánovaná úloha zaktualizována."
 
 msgid "Wakealarm"
-msgstr ""
+msgstr "Probuzení"
 
 msgid "Wednesday"
-msgstr ""
+msgstr "středa"
