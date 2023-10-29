@@ -3,12 +3,12 @@ Section: net
 XB-Plugin-Section: utilities
 Priority: optional
 Maintainer: OpenMediaVault Plugin Developers <plugins@omv-extras.org>
-Build-Depends: debhelper ( >= 12 )
+Build-Depends: debhelper (>= 13 )
 Standards-Version: 4.3.0
 
 Package: openmediavault-wakealarm
 Architecture: all
-Depends: openmediavault (>= 6.0.2),
+Depends: openmediavault (>= 7),
          python3-croniter,
          ${misc:Depends}
 Description: wakealarm plugin for OpenMediaVault.
