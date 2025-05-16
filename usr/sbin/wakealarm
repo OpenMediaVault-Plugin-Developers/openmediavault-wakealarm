@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """
-
-
-
+WakeAlarm script for OpenMediaVault - Sets RTC alarm based on schedule
 """
 from croniter import croniter
 from datetime import datetime
@@ -10,7 +8,7 @@ from datetime import timedelta
 from sys import exit
 import time
 from time import mktime
-
+import argparse
 import logging
 import logging.handlers
 
@@ -32,6 +30,7 @@ log.addHandler(NullHandler())
 
 class WakeAlarm(object):
     """
+    Manages RTC wakealarm functionality based on cron expressions.
 
     Attributes:
         config (str): Full path and filename of schedule file.
@@ -39,25 +38,21 @@ class WakeAlarm(object):
             This prevents missed schedules during a shutdown.
         next_alarm (datetime): Time of upcoming wakealarm.
         current_alarm: Time of current wakealarm.
-
     """
     def __init__(self, config=None, offset=timedelta(minutes=2)):
         """
-
         Args:
             config (str): Full path and filename of schedule file.
             offset (timedelta): Minimum offset from current time to schedule from.
                 This prevents missed schedules during a shutdown.
-
         """
-        #Moeten custom variables hiet getest worden?
         self.config = config
         self.offset = offset
 
         self._cronexp = []
         self.next_alarm = None
-        self.current_alarm = None #Of juist misschien meteen het huidige alarm zetten.
-        self.load_config() #Misschien verplaatsen naar main()
+        self.current_alarm = None
+        self.load_config()
 
     def load_config(self):
         """Load wakealarm schedule from file."""
@@ -85,13 +80,19 @@ class WakeAlarm(object):
             except ValueError:
                 log.warning('Unrecognized cron expression: %s', line)
                 self._cronexp.remove(line)
+        
+        if not times:
+            log.info('No valid schedules found.')
+            self.next_alarm = None
+            return None
+            
         next_alarm = min(times)
         min_alarm = current_time + self.offset
         if next_alarm < min_alarm:
             next_alarm = min_alarm
         self.next_alarm = next_alarm
         log.info('Next alarm: %s', self.next_alarm)
-        return self.next_alarm  #Overbodig? 3x
+        return self.next_alarm
 
     def get_current_alarm(self):
         """Get current wakealarm in datetime format."""
@@ -115,27 +116,48 @@ class WakeAlarm(object):
                 f.write(timestamp)
             log.info('Wakealarm set to: %s', self.next_alarm)
         else:
-            log.warning('No alarm to be set.')
+            log.info('No alarm to be set.')
 
-def config_logger():
-    """Initialize script logger. Will be ignored for module use."""
-    log.setLevel(logging.DEBUG)
+def config_logger(log_level=logging.INFO):
+    """Initialize script logger with configurable level.
+    
+    Args:
+        log_level (int): Logging level (default: INFO)
+    """
+    log.setLevel(log_level)
 
     handler = logging.handlers.SysLogHandler(address='/dev/log', facility=logging.handlers.SysLogHandler.LOG_LOCAL6)
-    handler.setLevel(logging.DEBUG)
+    handler.setLevel(log_level)
     formatter = logging.Formatter('%(filename)s[%(process)s]: %(levelname)s - %(message)s')
     handler.setFormatter(formatter)
 
     log.addHandler(handler)
 
+def parse_args():
+    """Parse command line arguments."""
+    parser = argparse.ArgumentParser(description='Set RTC wakealarm based on schedule')
+    parser.add_argument('--debug', action='store_true', help='Enable debug logging')
+    parser.add_argument('--quiet', action='store_true', help='Suppress info messages, show only warnings and errors')
+    return parser.parse_args()
+
 def main():
-    """Main script function. Will be ignored for module use."""
-    config_logger()
+    """Main script function."""
+    args = parse_args()
+    
+    # Configure logging level based on command line arguments
+    if args.debug:
+        log_level = logging.DEBUG
+    elif args.quiet:
+        log_level = logging.WARNING
+    else:
+        log_level = logging.INFO
+    
+    config_logger(log_level)
 
     wakealarm = WakeAlarm(config=WAKEUP_CONF)
     wakealarm.get_current_alarm()
     wakealarm.get_next_alarm()
     wakealarm.set_alarm()
 
-if  __name__ == '__main__':
+if __name__ == '__main__':
     main()
