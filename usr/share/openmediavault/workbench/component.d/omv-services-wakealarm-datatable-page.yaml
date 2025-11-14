@@ -1,11 +1,12 @@
 version: "1.0"
 type: component
 data:
-  name: omv-services-wakealarm-jobs-datatable-page
+  name: omv-services-wakealarm-datatable-page
   type: datatablePage
   config:
     autoReload: false
     stateId: a882a76d-6804-4632-b31b-8b48c0ea6dde
+    hasSearchField: true
     sorters:
       - dir: asc
         prop: enable
@@ -41,11 +42,11 @@ data:
       - template: create
         execute:
           type: url
-          url: "/services/wakealarm/jobs/create"
+          url: "/services/wakealarm/create"
       - template: edit
         execute:
           type: url
-          url: "/services/wakealarm/jobs/edit/{{ _selected[0].uuid }}"
+          url: "/services/wakealarm/edit/{{ _selected[0].uuid }}"
       - template: delete
         execute:
           type: request

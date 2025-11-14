@@ -1,8 +1,8 @@
 version: "1.0"
 type: route
 data:
-  url: "/services/wakealarm/jobs/edit/:uuid"
+  url: "/services/wakealarm/edit/:uuid"
   title: _("Edit")
   editing: true
   notificationTitle: _("Updated scheduled job.")
-  component: omv-services-wakealarm-job-form-page
+  component: omv-services-wakealarm-form-page

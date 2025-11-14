@@ -3,4 +3,4 @@ type: route
 data:
   url: "/services/wakealarm"
   title: _("Wakealarm")
-  component: omv-services-wakealarm-jobs-datatable-page
+  component: omv-services-wakealarm-datatable-page

@@ -1,7 +1,7 @@
 version: "1.0"
 type: component
 data:
-  name: omv-services-wakealarm-job-form-page
+  name: omv-services-wakealarm-form-page
   type: formPage
   config:
     request:
@@ -354,8 +354,8 @@ data:
       - template: submit
         execute:
           type: url
-          url: "/services/wakealarm/jobs"
+          url: "/services/wakealarm"
       - template: cancel
         execute:
           type: url
-          url: "/services/wakealarm/jobs"
+          url: "/services/wakealarm"
