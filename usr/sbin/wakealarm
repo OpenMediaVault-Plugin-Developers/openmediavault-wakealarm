@@ -2,33 +2,25 @@
 """
 WakeAlarm script for OpenMediaVault - Sets RTC alarm based on schedule
 """
-from croniter import croniter
-from datetime import datetime
-from datetime import timedelta
-from sys import exit
-import time
-from time import mktime
+
+from datetime import datetime, timedelta
 import argparse
 import logging
 import logging.handlers
+import time
+from logging import NullHandler
+from pathlib import Path
+
+from croniter import croniter
 
 WAKEUP_CONF = '/etc/wakealarm.conf'
 WAKEALARM = '/sys/class/rtc/rtc0/wakealarm'
-#BOOTCOMPENSATION = timedelta(minutes=2)
-
-try:
-    from logging import NullHandler # Python >= 2.7
-except ImportError:
-    from logging import Handler
-    
-    class NullHandler(Handler):
-        def emit(self, record):
-            pass
 
 log = logging.getLogger(__name__)
 log.addHandler(NullHandler())
 
-class WakeAlarm(object):
+
+class WakeAlarm:
     """
     Manages RTC wakealarm functionality based on cron expressions.
 
@@ -36,10 +28,11 @@ class WakeAlarm(object):
         config (str): Full path and filename of schedule file.
         offset (timedelta): Minimum offset from current time to schedule from.
             This prevents missed schedules during a shutdown.
-        next_alarm (datetime): Time of upcoming wakealarm.
-        current_alarm: Time of current wakealarm.
+        next_alarm (datetime | None): Time of upcoming wakealarm.
+        current_alarm (datetime | None): Time of current wakealarm.
     """
-    def __init__(self, config=None, offset=timedelta(minutes=2)):
+
+    def __init__(self, config: str | None = None, offset: timedelta = timedelta(minutes=2)) -> None:
         """
         Args:
             config (str): Full path and filename of schedule file.
@@ -49,101 +42,159 @@ class WakeAlarm(object):
         self.config = config
         self.offset = offset
 
-        self._cronexp = []
-        self.next_alarm = None
-        self.current_alarm = None
+        self._cronexp: list[str] = []
+        self.next_alarm: datetime | None = None
+        self.current_alarm: datetime | None = None
         self.load_config()
 
-    def load_config(self):
+    def load_config(self) -> None:
         """Load wakealarm schedule from file."""
-        self._cronexp[:] = []
+        self._cronexp.clear()
+
         if not self.config:
             log.error('No configuration file set.')
             return
+
+        path = Path(self.config)
+        if not path.is_file():
+            log.critical('Unable to load wakealarm table: %s does not exist.', self.config)
+            return
+
         try:
-            with open(self.config, 'r') as f:
+            with path.open('r', encoding='utf-8') as f:
                 for line in f:
                     line = line.partition('#')[0].rstrip()
                     if line:
                         self._cronexp.append(line)
-        except IOError:
-            log.critical('Unable to load wakealarm table.')
+        except OSError as e:
+            log.critical('Unable to load wakealarm table %s: %s', self.config, e)
 
-    def get_next_alarm(self):
+    def get_next_alarm(self) -> datetime | None:
         """Determine datetime of upcoming wakealarm."""
-        times = []
+        if not self._cronexp:
+            log.info('No schedules configured.')
+            self.next_alarm = None
+            return None
+
         current_time = datetime.now()
-        for line in self._cronexp[:]:
+        times: list[datetime] = []
+        valid_crons: list[str] = []
+
+        for expr in self._cronexp:
             try:
-                time = croniter(line, current_time).get_next(datetime)
-                times.append(time)
+                next_time = croniter(expr, current_time).get_next(datetime)
             except ValueError:
-                log.warning('Unrecognized cron expression: %s', line)
-                self._cronexp.remove(line)
-        
+                log.warning('Unrecognized cron expression: %s', expr)
+                continue
+            else:
+                times.append(next_time)
+                valid_crons.append(expr)
+
+        # Keep only valid expressions for next run
+        self._cronexp = valid_crons
+
         if not times:
             log.info('No valid schedules found.')
             self.next_alarm = None
             return None
-            
+
         next_alarm = min(times)
         min_alarm = current_time + self.offset
         if next_alarm < min_alarm:
             next_alarm = min_alarm
+
         self.next_alarm = next_alarm
         log.info('Next alarm: %s', self.next_alarm)
         return self.next_alarm
 
-    def get_current_alarm(self):
+    def get_current_alarm(self) -> datetime | None:
         """Get current wakealarm in datetime format."""
-        with open(WAKEALARM, 'r') as f:
-            line = f.readline().strip('\n')
-        if line:
-            self.current_alarm = datetime.fromtimestamp(float(line))
-            log.info('Current alarm: %s', self.current_alarm)
-        else:
+        try:
+            with open(WAKEALARM, 'r', encoding='utf-8') as f:
+                line = f.readline().strip()
+        except OSError as e:
+            log.error('Unable to read current wakealarm (%s): %s', WAKEALARM, e)
+            self.current_alarm = None
+            return None
+
+        if not line:
             self.current_alarm = None
             log.info('No alarm set previously.')
+            return None
+
+        try:
+            timestamp = float(line)
+        except ValueError:
+            log.warning('Wakealarm contained non-numeric value: %r', line)
+            self.current_alarm = None
+            return None
+
+        # Assumes system time and RTC use the same base (typically UTC)
+        self.current_alarm = datetime.fromtimestamp(timestamp)
+        log.info('Current alarm: %s', self.current_alarm)
         return self.current_alarm
 
-    def set_alarm(self):
+    def set_alarm(self) -> None:
         """Set upcoming wakealarm."""
-        if self.next_alarm and self.next_alarm != self.current_alarm:
-            timestamp = '{0:.0f}\n'.format(time.mktime(self.next_alarm.timetuple()))
-            with open(WAKEALARM, 'w') as f:
-                f.write('0\n')
-            with open(WAKEALARM, 'w') as f:
-                f.write(timestamp)
-            log.info('Wakealarm set to: %s', self.next_alarm)
-        else:
+        if not self.next_alarm:
             log.info('No alarm to be set.')
+            return
 
-def config_logger(log_level=logging.INFO):
+        if self.next_alarm == self.current_alarm:
+            log.info('Alarm already set to the next scheduled time.')
+            return
+
+        # POSIX timestamp in seconds; equivalent to time.mktime for naive local datetimes
+        timestamp = int(self.next_alarm.timestamp())
+        try:
+            with open(WAKEALARM, 'w', encoding='utf-8') as f:
+                # Clear any existing alarm, then set new one
+                f.write('0\n')
+                f.write(f'{timestamp}\n')
+        except OSError as e:
+            log.error('Failed to set wakealarm (%s): %s', WAKEALARM, e)
+            return
+
+        log.info('Wakealarm set to: %s', self.next_alarm)
+
+
+def config_logger(log_level: int = logging.INFO) -> None:
     """Initialize script logger with configurable level.
-    
+
     Args:
         log_level (int): Logging level (default: INFO)
     """
     log.setLevel(log_level)
 
-    handler = logging.handlers.SysLogHandler(address='/dev/log', facility=logging.handlers.SysLogHandler.LOG_LOCAL6)
+    # Avoid multiple handlers if config_logger is called again
+    if any(isinstance(h, logging.handlers.SysLogHandler) for h in log.handlers):
+        for h in log.handlers:
+            h.setLevel(log_level)
+        return
+
+    handler = logging.handlers.SysLogHandler(
+        address='/dev/log',
+        facility=logging.handlers.SysLogHandler.LOG_LOCAL6,
+    )
     handler.setLevel(log_level)
     formatter = logging.Formatter('%(filename)s[%(process)s]: %(levelname)s - %(message)s')
     handler.setFormatter(formatter)
 
     log.addHandler(handler)
 
-def parse_args():
+
+def parse_args() -> argparse.Namespace:
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(description='Set RTC wakealarm based on schedule')
     parser.add_argument('--debug', action='store_true', help='Enable debug logging')
     parser.add_argument('--quiet', action='store_true', help='Suppress info messages, show only warnings and errors')
     return parser.parse_args()
 
-def main():
+
+def main() -> None:
     """Main script function."""
     args = parse_args()
-    
+
     # Configure logging level based on command line arguments
     if args.debug:
         log_level = logging.DEBUG
@@ -151,13 +202,14 @@ def main():
         log_level = logging.WARNING
     else:
         log_level = logging.INFO
-    
+
     config_logger(log_level)
 
     wakealarm = WakeAlarm(config=WAKEUP_CONF)
     wakealarm.get_current_alarm()
     wakealarm.get_next_alarm()
     wakealarm.set_alarm()
+
 
 if __name__ == '__main__':
     main()
