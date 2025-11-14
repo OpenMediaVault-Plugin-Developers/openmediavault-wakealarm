@@ -1,3 +1,9 @@
+openmediavault-wakealarm (8.0) stable; urgency=low
+
+  * Update for omv 8
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 14 Nov 2025 22:54:41 +0000
+
 openmediavault-wakealarm (7.0) stable; urgency=low
 
   * Update for OMV 7.x
