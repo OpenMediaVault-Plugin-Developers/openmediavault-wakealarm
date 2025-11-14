@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the openmediavault-wakealarm package.
 # 
 # Translators:
+# Gyuris Gellért <jobel@ujevangelizacio.hu>, 2024
 # Grawens <szabolcs.szanyi@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-17 06:50-0600\n"
-"PO-Revision-Date: 2021-11-17 12:51+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
-"Language-Team: Hungarian (Hungary) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/hu_HU/)\n"
+"POT-Creation-Date: 2025-11-14 23:12+0000\n"
+"PO-Revision-Date: 2015-03-04 12:18+0000\n"
+"Last-Translator: Gyuris Gellért <jobel@ujevangelizacio.hu>, 2024\n"
+"Language-Team: Hungarian (Hungary) (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/hu_HU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,19 +20,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "April"
-msgstr ""
+msgstr "Április"
 
 msgid "August"
-msgstr ""
+msgstr "Augusztus"
 
 msgid "Comment"
 msgstr "Megyjegyzés"
 
 msgid "Create"
-msgstr ""
+msgstr "Létrehozás"
 
 msgid "Created scheduled job."
-msgstr ""
+msgstr "Ütemezett feladat létrehozva."
 
 msgid "Day of month"
 msgstr "Hónap napja"
@@ -40,10 +41,10 @@ msgid "Day of week"
 msgstr "Hét napja"
 
 msgid "December"
-msgstr ""
+msgstr "December"
 
 msgid "Edit"
-msgstr ""
+msgstr "Szerkesztés"
 
 msgid "Enabled"
 msgstr "Engedélyezve"
@@ -58,70 +59,70 @@ msgid "Every N minute"
 msgstr "Minden N percben"
 
 msgid "February"
-msgstr ""
+msgstr "Február"
 
 msgid "Friday"
-msgstr ""
+msgstr "Péntek"
 
 msgid "Hour"
 msgstr "Óra"
 
 msgid "January"
-msgstr ""
+msgstr "Január"
 
 msgid "July"
-msgstr ""
+msgstr "Július"
 
 msgid "June"
-msgstr ""
+msgstr "Június"
 
 msgid "March"
-msgstr ""
+msgstr "Március"
 
 msgid "May"
-msgstr ""
+msgstr "Május"
 
 msgid "Minute"
 msgstr "Perc"
 
 msgid "Monday"
-msgstr ""
+msgstr "Hétfő"
 
 msgid "Month"
 msgstr "Hónap"
 
 msgid "November"
-msgstr ""
+msgstr "November"
 
 msgid "October"
-msgstr ""
+msgstr "Október"
 
 msgid "Saturday"
-msgstr ""
+msgstr "Szombat"
 
 msgid "Scheduled Alarms"
-msgstr ""
+msgstr "Ütemezett riasztások"
 
 msgid "Scheduling"
-msgstr ""
+msgstr "Ütemezés"
 
 msgid "September"
-msgstr ""
+msgstr "Szeptember"
 
 msgid "Sunday"
-msgstr ""
+msgstr "Vasárnap"
 
 msgid "Thursday"
-msgstr ""
+msgstr "Csütörtök"
 
 msgid "Tuesday"
-msgstr ""
+msgstr "Kedd"
 
 msgid "Updated scheduled job."
-msgstr ""
+msgstr "Ütemezett feladat frissítve."
 
 msgid "Wakealarm"
-msgstr ""
+msgstr "Wakealarm"
 
 msgid "Wednesday"
-msgstr ""
+msgstr "Szerda"

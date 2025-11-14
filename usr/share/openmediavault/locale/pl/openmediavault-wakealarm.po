@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the openmediavault-wakealarm package.
 # 
 # Translators:
+# Rysiek Jurczy, 2023
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-17 06:50-0600\n"
-"PO-Revision-Date: 2021-11-17 12:51+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
-"Language-Team: Polish (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/pl/)\n"
+"POT-Creation-Date: 2025-11-14 23:12+0000\n"
+"PO-Revision-Date: 2015-03-04 12:18+0000\n"
+"Last-Translator: Rysiek Jurczy, 2023\n"
+"Language-Team: Polish (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,109 +19,109 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 msgid "April"
-msgstr ""
+msgstr "Kwiecień"
 
 msgid "August"
-msgstr ""
+msgstr "Sierpień"
 
 msgid "Comment"
-msgstr ""
+msgstr "Komentarz"
 
 msgid "Create"
-msgstr ""
+msgstr "Utwórz"
 
 msgid "Created scheduled job."
-msgstr ""
+msgstr "Utwórz harmonogram zadań"
 
 msgid "Day of month"
-msgstr ""
+msgstr "Dni miesiąca"
 
 msgid "Day of week"
-msgstr ""
+msgstr "Dni tygodnia"
 
 msgid "December"
-msgstr ""
+msgstr "Grudzień"
 
 msgid "Edit"
-msgstr ""
+msgstr "Edytuj"
 
 msgid "Enabled"
-msgstr ""
+msgstr "Włączone"
 
 msgid "Every N day of month"
-msgstr ""
+msgstr "Co N'ty dzień miesiąca."
 
 msgid "Every N hour"
-msgstr ""
+msgstr "Co N'tą godzinę"
 
 msgid "Every N minute"
-msgstr ""
+msgstr "Co N'tą minutę"
 
 msgid "February"
-msgstr ""
+msgstr "Luty"
 
 msgid "Friday"
-msgstr ""
+msgstr "Piątek"
 
 msgid "Hour"
-msgstr ""
+msgstr "Godzina"
 
 msgid "January"
-msgstr ""
+msgstr "Styczeń"
 
 msgid "July"
-msgstr ""
+msgstr "Lipiec"
 
 msgid "June"
-msgstr ""
+msgstr "Czerwiec"
 
 msgid "March"
-msgstr ""
+msgstr "Marzec"
 
 msgid "May"
-msgstr ""
+msgstr "MAj"
 
 msgid "Minute"
-msgstr ""
+msgstr "Minuta"
 
 msgid "Monday"
-msgstr ""
+msgstr "Poniedziałek"
 
 msgid "Month"
-msgstr ""
+msgstr "Miesiąc"
 
 msgid "November"
-msgstr ""
+msgstr "Listopad"
 
 msgid "October"
-msgstr ""
+msgstr "Październik"
 
 msgid "Saturday"
-msgstr ""
+msgstr "Sobota"
 
 msgid "Scheduled Alarms"
-msgstr ""
+msgstr "Zaplanowany Alarm"
 
 msgid "Scheduling"
-msgstr ""
+msgstr "Planowanie"
 
 msgid "September"
-msgstr ""
+msgstr "Wrzesień"
 
 msgid "Sunday"
-msgstr ""
+msgstr "Niedziela"
 
 msgid "Thursday"
-msgstr ""
+msgstr "Czwartek"
 
 msgid "Tuesday"
-msgstr ""
+msgstr "Wtorek"
 
 msgid "Updated scheduled job."
-msgstr ""
+msgstr "Zaktualizowano zaplanowane zadanie"
 
 msgid "Wakealarm"
-msgstr ""
+msgstr "Wybudzanie"
 
 msgid "Wednesday"
-msgstr ""
+msgstr "Środa"

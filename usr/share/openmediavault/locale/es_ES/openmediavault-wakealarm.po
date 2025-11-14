@@ -3,47 +3,47 @@
 # This file is distributed under the same license as the openmediavault-wakealarm package.
 # 
 # Translators:
-# Raul Fernandez Garcia <raulfg3@gmail.com>, 2015
+# Raul Fernandez Garcia <raulfg3@gmail.com>, 2015,2021
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-17 06:50-0600\n"
-"PO-Revision-Date: 2021-11-17 12:51+0000\n"
-"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/es/)\n"
+"POT-Creation-Date: 2025-11-14 23:12+0000\n"
+"PO-Revision-Date: 2015-03-04 12:18+0000\n"
+"Last-Translator: Raul Fernandez Garcia <raulfg3@gmail.com>, 2015,2021\n"
+"Language-Team: Spanish (Spain) (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/es_ES/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "April"
-msgstr ""
+msgstr "Abril"
 
 msgid "August"
-msgstr ""
+msgstr "Agosto"
 
 msgid "Comment"
 msgstr "Comentario"
 
 msgid "Create"
-msgstr ""
+msgstr "Crear"
 
 msgid "Created scheduled job."
-msgstr ""
+msgstr "Crear un trabajo programado"
 
 msgid "Day of month"
 msgstr "Día del mes"
 
 msgid "Day of week"
-msgstr "Día d ela semana"
+msgstr "Día de la semana"
 
 msgid "December"
-msgstr ""
+msgstr "Diciembre"
 
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 msgid "Enabled"
 msgstr "Habilitado"
@@ -58,70 +58,70 @@ msgid "Every N minute"
 msgstr "cada minuto"
 
 msgid "February"
-msgstr ""
+msgstr "Febrero"
 
 msgid "Friday"
-msgstr ""
+msgstr "viernes"
 
 msgid "Hour"
 msgstr "Hora"
 
 msgid "January"
-msgstr ""
+msgstr "Enero"
 
 msgid "July"
-msgstr ""
+msgstr "Julio"
 
 msgid "June"
-msgstr ""
+msgstr "Junio"
 
 msgid "March"
-msgstr ""
+msgstr "Marzo"
 
 msgid "May"
-msgstr ""
+msgstr "Mayo"
 
 msgid "Minute"
 msgstr "Minuto"
 
 msgid "Monday"
-msgstr ""
+msgstr "lunes"
 
 msgid "Month"
 msgstr "Mes"
 
 msgid "November"
-msgstr ""
+msgstr "Noviembre"
 
 msgid "October"
-msgstr ""
+msgstr "Octubre"
 
 msgid "Saturday"
-msgstr ""
+msgstr "sabado"
 
 msgid "Scheduled Alarms"
-msgstr ""
+msgstr "Alarmas programadas"
 
 msgid "Scheduling"
-msgstr ""
+msgstr "Programación"
 
 msgid "September"
-msgstr ""
+msgstr "Septiembre"
 
 msgid "Sunday"
-msgstr ""
+msgstr "domingo"
 
 msgid "Thursday"
-msgstr ""
+msgstr "jueves"
 
 msgid "Tuesday"
-msgstr ""
+msgstr "martes"
 
 msgid "Updated scheduled job."
-msgstr ""
+msgstr "trabajo programado actualizado."
 
 msgid "Wakealarm"
-msgstr ""
+msgstr "Alarma para despertar"
 
 msgid "Wednesday"
-msgstr ""
+msgstr "miercoles"

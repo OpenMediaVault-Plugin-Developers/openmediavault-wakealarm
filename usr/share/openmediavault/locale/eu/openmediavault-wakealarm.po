@@ -3,20 +3,19 @@
 # This file is distributed under the same license as the openmediavault-wakealarm package.
 # 
 # Translators:
-# Toshihiro Kan <kansuke4649@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-14 23:12+0000\n"
 "PO-Revision-Date: 2015-03-04 12:18+0000\n"
-"Last-Translator: Toshihiro Kan <kansuke4649@gmail.com>, 2015\n"
-"Language-Team: Japanese (Japan) (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/ja_JP/)\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Basque (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja_JP\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: eu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "April"
 msgstr ""
@@ -25,7 +24,7 @@ msgid "August"
 msgstr ""
 
 msgid "Comment"
-msgstr "コメント"
+msgstr ""
 
 msgid "Create"
 msgstr ""
@@ -34,10 +33,10 @@ msgid "Created scheduled job."
 msgstr ""
 
 msgid "Day of month"
-msgstr "月の日"
+msgstr ""
 
 msgid "Day of week"
-msgstr "週の日"
+msgstr ""
 
 msgid "December"
 msgstr ""
@@ -46,16 +45,16 @@ msgid "Edit"
 msgstr ""
 
 msgid "Enabled"
-msgstr "有効化済み"
+msgstr ""
 
 msgid "Every N day of month"
-msgstr "毎月N日"
+msgstr ""
 
 msgid "Every N hour"
-msgstr "N時間毎"
+msgstr ""
 
 msgid "Every N minute"
-msgstr "N分毎"
+msgstr ""
 
 msgid "February"
 msgstr ""
@@ -64,7 +63,7 @@ msgid "Friday"
 msgstr ""
 
 msgid "Hour"
-msgstr "時間"
+msgstr ""
 
 msgid "January"
 msgstr ""
@@ -82,13 +81,13 @@ msgid "May"
 msgstr ""
 
 msgid "Minute"
-msgstr "分"
+msgstr ""
 
 msgid "Monday"
 msgstr ""
 
 msgid "Month"
-msgstr "月"
+msgstr ""
 
 msgid "November"
 msgstr ""
