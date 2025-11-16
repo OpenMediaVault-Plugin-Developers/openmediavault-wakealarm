@@ -16,6 +16,8 @@ case "$1" in
         if [ -n "$2" ]; then
             omv-confdbadm migrate "conf.system.wakealarm" "${2}"
         fi
+
+        omv-salt deploy run --no-color --quiet wakealarm || :
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
