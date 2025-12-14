@@ -1,3 +1,10 @@
+openmediavault-wakealarm (8.0.2) stable; urgency=low
+
+  * Use UTC-aware datetimes when calculating RTC alarms
+  * Write wakealarm values using separate sysfs writes
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sun, 14 Dec 2025 21:25:17 +0000
+
 openmediavault-wakealarm (8.0.1) stable; urgency=low
 
   * Run saltstack module on install to ensure logrotate config is
