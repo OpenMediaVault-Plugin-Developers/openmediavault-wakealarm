@@ -3,7 +3,7 @@
 WakeAlarm script for OpenMediaVault - Sets RTC alarm based on schedule
 """
 
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import argparse
 import logging
 import logging.handlers
@@ -76,7 +76,7 @@ class WakeAlarm:
             self.next_alarm = None
             return None
 
-        current_time = datetime.now()
+        current_time = datetime.now(timezone.utc)
         times: list[datetime] = []
         valid_crons: list[str] = []
 
@@ -130,7 +130,7 @@ class WakeAlarm:
             return None
 
         # Assumes system time and RTC use the same base (typically UTC)
-        self.current_alarm = datetime.fromtimestamp(timestamp)
+        self.current_alarm = datetime.fromtimestamp(timestamp, timezone.utc)
         log.info('Current alarm: %s', self.current_alarm)
         return self.current_alarm
 
@@ -140,17 +140,19 @@ class WakeAlarm:
             log.info('No alarm to be set.')
             return
 
-        if self.next_alarm == self.current_alarm:
-            log.info('Alarm already set to the next scheduled time.')
-            return
-
         # POSIX timestamp in seconds; equivalent to time.mktime for naive local datetimes
         timestamp = int(self.next_alarm.timestamp())
+        payload_clear = "0"
+        payload_set = str(timestamp)
+
+        log.info("Setting wakealarm path=%s clear=%r set=%r", WAKEALARM, payload_clear, payload_set)
+
         try:
-            with open(WAKEALARM, 'w', encoding='utf-8') as f:
-                # Clear any existing alarm, then set new one
-                f.write('0\n')
-                f.write(f'{timestamp}\n')
+            # Clear any existing alarm, then set new one
+            with open(WAKEALARM, "w", encoding="ascii", newline="\n") as f:
+                f.write(payload_clear)
+            with open(WAKEALARM, "w", encoding="ascii", newline="\n") as f:
+                f.write(payload_set)
         except OSError as e:
             log.error('Failed to set wakealarm (%s): %s', WAKEALARM, e)
             return
