@@ -3,7 +3,7 @@
 WakeAlarm script for OpenMediaVault - Sets RTC alarm based on schedule
 """
 
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 import argparse
 import logging
 import logging.handlers
@@ -76,13 +76,26 @@ class WakeAlarm:
             self.next_alarm = None
             return None
 
-        current_time = datetime.now(timezone.utc)
+        current_time = datetime.now().astimezone()
+        tz = current_time.tzinfo
+        offset = current_time.utcoffset()
+        dst = current_time.dst()
+
+        log.info(
+            "Using local timezone: %s (UTC offset %s, DST=%s)",
+            tz.tzname(current_time),
+            offset,
+            bool(dst and dst.total_seconds() != 0),
+        )
+
         times: list[datetime] = []
         valid_crons: list[str] = []
 
         for expr in self._cronexp:
             try:
                 next_time = croniter(expr, current_time).get_next(datetime)
+                if next_time.tzinfo is None:
+                    next_time = next_time.replace(tzinfo=current_time.tzinfo)
             except ValueError:
                 log.warning('Unrecognized cron expression: %s', expr)
                 continue
@@ -130,7 +143,7 @@ class WakeAlarm:
             return None
 
         # Assumes system time and RTC use the same base (typically UTC)
-        self.current_alarm = datetime.fromtimestamp(timestamp, timezone.utc)
+        self.current_alarm = datetime.fromtimestamp(timestamp).astimezone()
         log.info('Current alarm: %s', self.current_alarm)
         return self.current_alarm
 
@@ -142,6 +155,10 @@ class WakeAlarm:
 
         # POSIX timestamp in seconds; equivalent to time.mktime for naive local datetimes
         timestamp = int(self.next_alarm.timestamp())
+        if self.current_alarm and int(self.current_alarm.timestamp()) == timestamp:
+            log.info("Alarm already set to the next scheduled time.")
+            return
+
         payload_clear = "0"
         payload_set = str(timestamp)
 
