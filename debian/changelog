@@ -1,3 +1,9 @@
+openmediavault-wakealarm (8.0.3) stable; urgency=low
+
+  * Fix UTC offset issue
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Tue, 16 Dec 2025 18:10:29 +0000
+
 openmediavault-wakealarm (8.0.2) stable; urgency=low
 
   * Use UTC-aware datetimes when calculating RTC alarms
