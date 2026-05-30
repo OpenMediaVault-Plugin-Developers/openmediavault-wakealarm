@@ -27,7 +27,7 @@ configure_wakealarm:
         config: {{ config | json }}
     - user: root
     - group: root
-    - mode: 644
+    - mode: '0644'
 
 configure_wakealarm_logrotate:
   file.managed:
@@ -42,4 +42,4 @@ configure_wakealarm_logrotate:
         }
     - user: root
     - group: root
-    - mode: 644
+    - mode: '0644'
