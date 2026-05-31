@@ -4,12 +4,12 @@
 # 
 # Translators:
 # Marco, 2015
-# Paolo Velati <paolo.velati@gmail.com>, 2015
+# d5316b6b4d283a9cbe4ea704ae8abe02_b972f24 <bd82b27c045fcb3aa6bd04640e5224c5_36908>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-14 23:12+0000\n"
+"POT-Creation-Date: 2026-05-31 01:30+0000\n"
 "PO-Revision-Date: 2015-03-04 12:18+0000\n"
 "Last-Translator: Marco, 2015\n"
 "Language-Team: Italian (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/it/)\n"

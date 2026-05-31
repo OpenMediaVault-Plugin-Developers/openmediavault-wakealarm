@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-wakealarm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-14 23:12+0000\n"
+"POT-Creation-Date: 2026-05-31 01:30+0000\n"
 "PO-Revision-Date: 2015-03-04 12:18+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Lao (Laos) (http://app.transifex.com/openmediavault-plugin-developers/openmediavault-wakealarm/language/lo_LA/)\n"
@@ -18,109 +18,109 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "April"
-msgstr ""
+msgstr "ເມສາ"
 
 msgid "August"
-msgstr ""
+msgstr "ສິງຫາ"
 
 msgid "Comment"
-msgstr ""
+msgstr "ຄຳເຫັນ"
 
 msgid "Create"
-msgstr ""
+msgstr "ສ້າງ"
 
 msgid "Created scheduled job."
-msgstr ""
+msgstr "ສ້າງໜ້າວຽກທີ່ກຳນົດເວລາແລ້ວ."
 
 msgid "Day of month"
-msgstr ""
+msgstr "ວັນທີຂອງເດືອນ"
 
 msgid "Day of week"
-msgstr ""
+msgstr "ວັນຂອງອາທິດ"
 
 msgid "December"
-msgstr ""
+msgstr "ທັນວາ"
 
 msgid "Edit"
-msgstr ""
+msgstr "ແກ້ໄຂ"
 
 msgid "Enabled"
-msgstr ""
+msgstr "ເປີດໃຊ້ງານ"
 
 msgid "Every N day of month"
-msgstr ""
+msgstr "ທຸກໆ N ວັນຂອງເດືອນ"
 
 msgid "Every N hour"
-msgstr ""
+msgstr "ທຸກໆ N ຊົ່ວໂມງ"
 
 msgid "Every N minute"
-msgstr ""
+msgstr "ທຸກໆ N ນາທີ"
 
 msgid "February"
-msgstr ""
+msgstr "ກຸມພາ"
 
 msgid "Friday"
-msgstr ""
+msgstr "ວັນສຸກ"
 
 msgid "Hour"
-msgstr ""
+msgstr "ຊົ່ວໂມງ"
 
 msgid "January"
-msgstr ""
+msgstr "ມັງກອນ"
 
 msgid "July"
-msgstr ""
+msgstr "ກໍລະກົດ"
 
 msgid "June"
-msgstr ""
+msgstr "ມິຖຸນາ"
 
 msgid "March"
-msgstr ""
+msgstr "ມີນາ"
 
 msgid "May"
-msgstr ""
+msgstr "ພຶດສະພາ"
 
 msgid "Minute"
-msgstr ""
+msgstr "ນາທີ"
 
 msgid "Monday"
-msgstr ""
+msgstr "ວັນຈັນ"
 
 msgid "Month"
-msgstr ""
+msgstr "ເດືອນ"
 
 msgid "November"
-msgstr ""
+msgstr "ພະຈິກ"
 
 msgid "October"
-msgstr ""
+msgstr "ຕຸລາ"
 
 msgid "Saturday"
-msgstr ""
+msgstr "ວັນເສົາ"
 
 msgid "Scheduled Alarms"
-msgstr ""
+msgstr "ການຕັ້ງໂມງປຸກທີ່ກຳນົດໄວ້"
 
 msgid "Scheduling"
-msgstr ""
+msgstr "ການກຳນົດເວລາ"
 
 msgid "September"
-msgstr ""
+msgstr "ກັນຍາ"
 
 msgid "Sunday"
-msgstr ""
+msgstr "ວັນອາທິດ"
 
 msgid "Thursday"
-msgstr ""
+msgstr "ວັນພະຫັດ"
 
 msgid "Tuesday"
-msgstr ""
+msgstr "ວັນອັງຄານ"
 
 msgid "Updated scheduled job."
-msgstr ""
+msgstr "ອັບເດດໜ້າວຽກທີ່ກຳນົດເວລາແລ້ວ."
 
 msgid "Wakealarm"
-msgstr ""
+msgstr "ໂມງປຸກປຸກເຄື່ອງ"
 
 msgid "Wednesday"
-msgstr ""
+msgstr "ວັນພຸດ"
